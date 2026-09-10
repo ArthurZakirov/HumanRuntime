@@ -25,7 +25,7 @@
 | Could the washer dose detergent automatically? | The likely Schulthess proLine W65 supports optional external liquid-detergent pumps, but this is optional equipment and does not prove that the local machine has it. |
 | How to check before dosing | Look for a clear `Waschmittel inklusive` / `automatic dosing` notice or connected dosing system. If the machine has an ordinary drawer marked `I`, `II` and a flower and no inclusion notice, use personal detergent in compartment `II`. Never add personal detergent on top of confirmed automatic dosing. |
 | What detergent covers the recorded colored cotton load? | Color detergent powder suitable for 20–60 °C. For the current colored towel load, use the package dose for a 3 kg, normally/strongly soiled load and the locally recommended water-hardness setting. |
-| Munich water setting | SWM measures hard water on average but recommends dosing detergent for the `medium` hardness range for normally or lightly soiled laundry; increase only if results are unsatisfactory. |
+| Water-hardness setting | Determine the current local water supplier's hardness category when dosing. Do not store a precise residential location in this public skill. |
 | Is separate water softener/Calgon needed? | No routine extra softener is needed when the chosen detergent already contains water softener. Follow an explicit machine/operator notice if present. |
 | Should the user buy machine cleaner? | No. Do not run cleaner, descaler or an empty maintenance cycle in a shared paid machine unless the operator explicitly instructs users to do so. Machine maintenance belongs to the operator. |
 | Should fabric softener be used? | No for towels, microfiber, sportswear or encasings. It can reduce towel absorbency and sportswear performance. |
