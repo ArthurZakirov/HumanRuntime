@@ -30,3 +30,9 @@ Capacity is the dry weight of laundry. Until the washer type plate is confirmed,
 | Mattress covers and encasings | Usually one bulky item/load | Loose, never compressed | Volume becomes the limit before weight; wash separately unless ample movement remains. |
 
 Never compress laundry to reach a target weight. Reduce the load for heavy soil. If exact calibration would help, weigh a full dry laundry basket once and subtract the empty basket weight.
+
+## Recorded load measurements
+
+| Date | Contents | Dry weight | Planning implication |
+|---|---|---:|---|
+| September 2026 | 2 black bath towels, 2 black hand towels, 2 turquoise towels and 1 light-blue children's towel | 3.0 kg total | Well below the assumed 7 kg cotton ceiling and safe from an overloading perspective. Do not add 30–40 °C clothing merely to fill the drum when this towel load is run at 60 °C. |
