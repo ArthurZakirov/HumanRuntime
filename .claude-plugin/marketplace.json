@@ -1,0 +1,17 @@
+{
+  "name": "arthurzakirov",
+  "owner": {
+    "name": "Arthur Zakirov"
+  },
+  "description": "Arthur Zakirov's HumanRuntime plugin bundle.",
+  "plugins": [
+    {
+      "name": "human-runtime",
+      "source": "./",
+      "description": "Personal operating skills for nutrition, ergonomics, laundry, and the human side of agentic work.",
+      "author": {
+        "name": "Arthur Zakirov"
+      }
+    }
+  ]
+}

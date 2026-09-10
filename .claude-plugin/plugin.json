@@ -1,0 +1,17 @@
+{
+  "name": "human-runtime",
+  "description": "Personal operating skills for nutrition, ergonomics, laundry, and the human side of agentic work.",
+  "author": {
+    "name": "Arthur Zakirov",
+    "url": "https://github.com/ArthurZakirov"
+  },
+  "homepage": "https://github.com/ArthurZakirov/HumanRuntime",
+  "repository": "https://github.com/ArthurZakirov/HumanRuntime",
+  "license": "MIT",
+  "keywords": [
+    "skills",
+    "claude-code",
+    "human-runtime"
+  ],
+  "skills": "./skills/"
+}
