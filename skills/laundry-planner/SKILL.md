@@ -7,7 +7,7 @@ description: Plan and update Arthur's household laundry using his recorded texti
 
 Maintain a practical, low-waste laundry routine. Use the recorded inventory and laundry-room facts in the references before proposing a wash. Confirm care labels whenever an item is not yet verified; do not turn a likely setting into a certainty.
 
-Read [inventory.md](references/inventory.md) for the textile list and [laundry-room.md](references/laundry-room.md) for the machines and AppWash workflow.
+Read [inventory.md](references/inventory.md) for the textile list, [laundry-room.md](references/laundry-room.md) for the machines and AppWash workflow, and [shared-machine-hygiene.md](references/shared-machine-hygiene.md) before advising on hygiene in the communal laundry room.
 
 ## Planning principles
 

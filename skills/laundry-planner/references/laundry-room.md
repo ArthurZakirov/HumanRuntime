@@ -16,3 +16,15 @@
 3. Load only the planned compatible family. The drum should be full enough to make the fixed price worthwhile, while the textiles still move freely; do not force the door shut.
 4. Choose the planned program and follow the product labels. Do not change a paid booking or begin a cycle without the user's explicit request.
 5. For drying, re-check the labels. The mattress cover and the recorded kitchen towels must air-dry.
+
+## Loading guide
+
+Capacity is the dry weight of laundry. Until the washer type plate is confirmed, use the assumed 7 kg W65 capacity only as a planning ceiling:
+
+- Cotton towels and bedding: target about 5.5–6.5 kg. Load loosely and leave about one upright hand of space at the top of the drum.
+- T-shirts and ordinary mixed clothing: about 3.5–5 kg, no more than roughly three-quarters of the drum.
+- Synthetic sportswear: no more than about 3–3.5 kg or half a drum so it can move and rinse properly.
+- Delicates: no more than about 2 kg or one-third of the drum.
+- Bulky mattress covers and encasings: volume governs before weight; wash loosely and usually separately.
+
+Never compress laundry to reach a target weight. Reduce the load for heavy soil. If exact calibration would help, weigh a full dry laundry basket once and subtract the empty basket weight.
