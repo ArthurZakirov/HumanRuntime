@@ -17,6 +17,29 @@
 4. Choose the planned program and follow the product labels. Do not change a paid booking or begin a cycle without the user's explicit request.
 5. For drying, re-check the labels. The mattress cover and the recorded kitchen towels must air-dry.
 
+## Detergent and machine care
+
+| Question | Working rule |
+|---|---|
+| Does AppWash include detergent? | AppWash standardizes booking, payment and machine access; its user instructions do not promise detergent. Treat detergent supply as a site-specific operator choice. |
+| Could the washer dose detergent automatically? | The likely Schulthess proLine W65 supports optional external liquid-detergent pumps, but this is optional equipment and does not prove that the local machine has it. |
+| How to check before dosing | Look for a clear `Waschmittel inklusive` / `automatic dosing` notice or connected dosing system. If the machine has an ordinary drawer marked `I`, `II` and a flower and no inclusion notice, use personal detergent in compartment `II`. Never add personal detergent on top of confirmed automatic dosing. |
+| What detergent covers the recorded colored cotton load? | Color detergent powder suitable for 20–60 °C. For the current colored towel load, use the package dose for a 3 kg, normally/strongly soiled load and the locally recommended water-hardness setting. |
+| Munich water setting | SWM measures hard water on average but recommends dosing detergent for the `medium` hardness range for normally or lightly soiled laundry; increase only if results are unsatisfactory. |
+| Is separate water softener/Calgon needed? | No routine extra softener is needed when the chosen detergent already contains water softener. Follow an explicit machine/operator notice if present. |
+| Should the user buy machine cleaner? | No. Do not run cleaner, descaler or an empty maintenance cycle in a shared paid machine unless the operator explicitly instructs users to do so. Machine maintenance belongs to the operator. |
+| Should fabric softener be used? | No for towels, microfiber, sportswear or encasings. It can reduce towel absorbency and sportswear performance. |
+
+### Practical starter products
+
+| Priority | Product type | Example | Use |
+|---:|---|---|---|
+| 1 | Color detergent powder | Denkmit Colorwaschmittel Pulver or another powder labeled for colored laundry up to 60 °C | Main detergent for colored cotton towels, dark cotton clothing and other label-compatible colored loads. |
+| Optional for the first mixed-color towel wash | Color-catcher sheet | Denkmit Farb- & Schmutzfangtücher or equivalent | May reduce loose-dye transfer from the new black towels, but does not guarantee that turquoise or light blue will remain unchanged. |
+| Buy later when needed | Wool/delicates detergent | Any clearly labeled Woll- & Feinwaschmittel | Only for wool, silk or garments whose labels require it. |
+
+For the current 3 kg towel load, do not buy fabric softener, hygiene rinse, descaler or washing-machine cleaner.
+
 ## Loading guide
 
 Capacity is the dry weight of laundry. Until the washer type plate is confirmed, use the assumed 7 kg W65 capacity only as a planning ceiling:
