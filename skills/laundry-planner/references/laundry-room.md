@@ -21,10 +21,12 @@
 
 Capacity is the dry weight of laundry. Until the washer type plate is confirmed, use the assumed 7 kg W65 capacity only as a planning ceiling:
 
-- Cotton towels and bedding: target about 5.5–6.5 kg. Load loosely and leave about one upright hand of space at the top of the drum.
-- T-shirts and ordinary mixed clothing: about 3.5–5 kg, no more than roughly three-quarters of the drum.
-- Synthetic sportswear: no more than about 3–3.5 kg or half a drum so it can move and rinse properly.
-- Delicates: no more than about 2 kg or one-third of the drum.
-- Bulky mattress covers and encasings: volume governs before weight; wash loosely and usually separately.
+| Load family | Target dry weight | Visual limit | Practical rule |
+|---|---:|---|---|
+| Cotton towels and bedding | 5.5–6.5 kg | Nearly full; about one upright hand free at the top | Load loosely. Use the cotton maximum only for compatible, normally soiled items. |
+| T-shirts and ordinary mixed clothing | 3.5–5 kg | At most about three-quarters full | Garments must tumble freely; keep towels out to limit lint and abrasion. |
+| Synthetic sportswear | Up to 3–3.5 kg | About half full | Leave room for movement and rinsing; no fabric softener. |
+| Delicates | Up to about 2 kg | About one-third full | Use the label-compatible gentle program and reduced spin. |
+| Mattress covers and encasings | Usually one bulky item/load | Loose, never compressed | Volume becomes the limit before weight; wash separately unless ample movement remains. |
 
 Never compress laundry to reach a target weight. Reduce the load for heavy soil. If exact calibration would help, weigh a full dry laundry basket once and subtract the empty basket weight.
