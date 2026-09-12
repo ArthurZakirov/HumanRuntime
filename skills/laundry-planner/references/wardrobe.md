@@ -10,7 +10,7 @@ This file records garments and related textiles found in the prior conversation 
 | Flower T-shirt | 1 | Beige; flower design; wrinkles heavily | Suitable for going out | Material and care unknown | Label needed |
 | Jack & Jones V-neck T-shirt | 1 | Black; more than 10 years old | Too small/worn; home only | Material and care unknown | Label needed |
 | H&M tank top | 1 | Black | Gym backup / summer | Material and care unknown | Label needed |
-| KONUX T-shirts | 2 | 1 white, 1 black; white shirt wrinkles | Occasional public wear | Material and care unknown | Label needed |
+| KONUX T-shirt | 1 | White; wrinkles | Occasional public wear | Material and care unknown | Label needed. The black printed KONUX work shirt was migrated to the structured inventory. |
 | MI Diesel T-shirts | 2 | Black | Home only | Material and care unknown | Label needed |
 | MAN T-shirt | About 1 | Black; received from father | Home only | Material and care unknown | Historical; wording/count to confirm |
 | Esprit short-sleeve polo | 1 | Green; wrinkles | Smart/casual wear | Material and care unknown | Label needed |
