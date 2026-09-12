@@ -14,7 +14,6 @@ This file records garments and related textiles found in the prior conversation 
 | MI Diesel T-shirts | 2 | Black | Home only | Material and care unknown | Label needed |
 | MAN T-shirt | About 1 | Black; received from father | Home only | Material and care unknown | Historical; wording/count to confirm |
 | Esprit short-sleeve polo | 1 | Green; wrinkles | Smart/casual wear | Material and care unknown | Label needed |
-| Cotton lounge trousers | 1 | Black; long | Home wear | Cotton reported; exact care unknown | Label needed |
 | Swim trunks | 2 | Colors unknown | Rarely/never used | Material and care unknown | Label needed |
 | Cycling rain overtrousers | 1 | Color unknown; stored in a bag | Occasional cycling | Material and care unknown | Label needed |
 | Thin rain jacket | 1 | Green | Summer evenings, wind and rain | Material and care unknown | Label needed |
@@ -23,7 +22,6 @@ This file records garments and related textiles found in the prior conversation 
 | CMP fleece jacket | 1 | Light grey | Autumn / warm layer | Material and care unknown | Label needed |
 | Formal suit with trousers | 1 set | Color unknown; from school-leaving age | Long unused; likely tight | Usually specialist care, but label required | Label needed |
 | Zara business-casual jacket | 1 | Beige/off-white; no matching trousers | Smart/casual wear | Material and care unknown | Label needed |
-| Remaining ill-fitting trousers | 2 | Exact colors unknown; may include 1 beige chino that wrinkles | Unused, too wide; disposal candidates | Do not plan as routine laundry unless retained | Historical; current ownership to confirm. The 3 Zara and 2 ONLY & SONS trousers were migrated to the structured inventory. |
 | Old jogging trousers | 3 | Colors unknown | Unused, too wide; disposal candidates | Do not plan as routine laundry unless retained | Historical; current ownership to confirm |
 
 ## Historical aggregates — do not add to itemized totals
@@ -32,7 +30,6 @@ This file records garments and related textiles found in the prior conversation 
 |---|---|---|
 | Presentable black T-shirts | 9 total reported | A completeness check only. It may include Tee Jays, s.Oliver, KONUX or other shirts now itemized elsewhere. |
 | C&A Bodywear underwear | 3 black | Current ownership and labels need confirmation. |
-| Remaining socks | One drawer; many white and possibly other black socks; summer and winter weights | Excludes the separately itemized adidas three-pack and black “Bambus Socke” group. Quantities, materials and overlap among the remaining socks are unknown. |
 | Large towels | 3 reported at that time | Likely overlaps with the now itemized bath towels; do not create three additional towels. |
 
 ## Bedding and household textiles awaiting checks
@@ -74,5 +71,5 @@ Footwear is retained for outfit and activity recommendations. None belongs in a 
 |---:|---|---|
 | 1 | Labels of the green rain jacket, cycling rain trousers, suit and Zara jacket | These may need special cycles or professional cleaning. |
 | 2 | Labels of black/dark everyday tops | This unlocks safe grouping into the 30 °C or 40 °C dark-clothing loads. |
-| 3 | Current count of underwear, socks, towels and the 7+3 unused trousers | Resolves historical overlap and prevents false load-size estimates. |
+| 3 | Current count of underwear, towels and the 3 unused jogging trousers | Resolves historical overlap and prevents false load-size estimates. |
 | 4 | Bedding labels and the exact 180 × 200 cm IKEA product name | Bulky textiles strongly affect load size and dryer safety. |
