@@ -23,7 +23,7 @@ This file records garments and related textiles found in the prior conversation 
 | CMP fleece jacket | 1 | Light grey | Autumn / warm layer | Material and care unknown | Label needed |
 | Formal suit with trousers | 1 set | Color unknown; from school-leaving age | Long unused; likely tight | Usually specialist care, but label required | Label needed |
 | Zara business-casual jacket | 1 | Beige/off-white; no matching trousers | Smart/casual wear | Material and care unknown | Label needed |
-| Ill-fitting trousers | 7 | Mostly unknown; includes 1 beige chino that wrinkles | Unused, too wide; disposal candidates | Do not plan as routine laundry unless retained | Historical; current ownership to confirm |
+| Remaining ill-fitting trousers | 2 | Exact colors unknown; may include 1 beige chino that wrinkles | Unused, too wide; disposal candidates | Do not plan as routine laundry unless retained | Historical; current ownership to confirm. The 3 Zara and 2 ONLY & SONS trousers were migrated to the structured inventory. |
 | Old jogging trousers | 3 | Colors unknown | Unused, too wide; disposal candidates | Do not plan as routine laundry unless retained | Historical; current ownership to confirm |
 
 ## Historical aggregates — do not add to itemized totals
