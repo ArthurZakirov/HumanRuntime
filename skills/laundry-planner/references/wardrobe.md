@@ -31,10 +31,8 @@ This file records garments and related textiles found in the prior conversation 
 | Group | Earlier snapshot | How to use it |
 |---|---|---|
 | Presentable black T-shirts | 9 total reported | A completeness check only. It may include Tee Jays, s.Oliver, KONUX or other shirts now itemized elsewhere. |
-| PUMA underwear | 4 black and 1 light blue then in use | Older snapshot. Keep separate from the later verified six-pack until current pieces are counted. |
 | C&A Bodywear underwear | 3 black | Current ownership and labels need confirmation. |
-| Calvin Klein underwear | 2 black | Current ownership and labels need confirmation. |
-| Socks | One drawer; many white and some black; summer and winter weights | Quantity and materials unknown. The verified adidas three-pack remains separately itemized. |
+| Remaining socks | One drawer; many white and possibly other black socks; summer and winter weights | Excludes the separately itemized adidas three-pack and black “Bambus Socke” group. Quantities, materials and overlap among the remaining socks are unknown. |
 | Large towels | 3 reported at that time | Likely overlaps with the now itemized bath towels; do not create three additional towels. |
 
 ## Bedding and household textiles awaiting checks
