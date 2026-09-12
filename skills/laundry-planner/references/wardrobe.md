@@ -39,7 +39,7 @@ This file records garments and related textiles found in the prior conversation 
 
 | Item | Quantity / size | Description or status | Care data | Record status |
 |---|---|---|---|---|
-| Duvet-cover sets | 3 sets | Each reported as duvet cover plus pillowcase; colors unknown | Material, dimensions and care unknown | Label needed |
+| Remaining unidentified duvet-cover set | 1 set | Duvet cover plus pillowcase; colors unknown. The photographed SCHÖNER WOHNEN and s.Oliver sets have moved to the structured care inventory. | Material, dimensions and care unknown | Label needed |
 | Duvets / blankets | 2 | 1 thick and 1 thinner; both too warm for summer | Exact type, fill, dimensions and care unknown | Label needed |
 | IKEA cooling topper/blanket | 1; 180 × 200 cm | Name was transcribed approximately as “Kesarol” | Exact model, construction and care unknown | Product identification needed |
 | Old fitted sheets / mattress covers | Several; for a former 90 cm mattress | Possibly obsolete after moving to 140 cm | Quantity, colors, material and current ownership unknown | Historical; current ownership to confirm |
