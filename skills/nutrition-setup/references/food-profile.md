@@ -40,6 +40,7 @@ Quantities describe prior planning and should be reconciled with current invento
 ## Carbohydrate and legume rotation
 
 - Prefer rotation rather than relying heavily on rice.
+- Bread, including pumpernickel and packaged whole-grain bread, is currently excluded because Arthur wants to remain bread-free. Do not surface it or substitute it for another carbohydrate unless he explicitly reactivates it.
 - Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, cooked packaged potatoes, microwave rice, buckwheat flakes, and a small amount of chickpeas.
 - Beans and lentils are preferred over chickpeas.
 - Ready-to-eat legumes are a monthly pantry purchase. Current consumption is approximately four to five tins, jars, or pouches per week; the working target is about 20 units after replenishment, with beans and lentils favored over chickpeas.
