@@ -65,7 +65,7 @@ The September 2026 basket contained 44 product lines and is evidence of preferen
 - Dairy: Fage yogurt and Andechser kefir.
 - Protein: seven packs of pre-cooked frozen chicken fillet steaks, salmon portions, tuna.
 - Legumes: chickpeas, white beans, black beans, brown lentils.
-- Other recurring foods: mushrooms, kimchi, olive oil, oats, coffee, pumpernickel, corn cakes, rice cakes, and lentil cakes.
+- Other recurring foods: kimchi, olive oil, oats, coffee, corn cakes, rice cakes, and lentil cakes. Jarred mushrooms and pumpernickel are currently paused and must not surface automatically.
 
 ## Historical eight-week planning quantities
 

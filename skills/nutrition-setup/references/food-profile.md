@@ -25,7 +25,7 @@ A later large Flink order reinforced these categories and added strong signals f
 - Fish tins: approximately two to three per week, with a preference for mackerel and sardines as convenient omega-3 sources; tuna in its own juice is also used.
 - Frozen chicken, suitable salmon, and approved prawn formats share one monthly freezer target of approximately 6 kg, based on 200 g/day for 30 days. Current chicken stock is 800 g. Fish tins are a separate pantry reserve and do not automatically reduce this freezer target because they may be eaten as an additional portion.
 - Rice cakes: roughly one to two packs per week.
-- Mushrooms such as chanterelles: approximately one pack every one to two weeks.
+- Jarred mushrooms such as champignons and chanterelles are currently paused for shopping. Approximately 2 kg are already stocked; consumption speed and the after-opening freezer-portion routine must be validated before any recurring cadence is activated.
 
 Quantities describe prior planning and should be reconciled with current inventory before large purchases.
 
