@@ -124,7 +124,8 @@ This is a draft derived from purchase history and stated routines. It is not a f
 | Protein powder | long-cycle stock | Several kilograms from Myprotein; check around the estimated three-to-four-month horizon | confirmed stock, estimated horizon |
 | Creatine | annual stock | Approximately one year of ProFuel supply; do not surface in weekly lists | confirmed stock |
 | Magnesium, L-theanine, omega-3 | long-cycle stock | Sunday Natural; depletion rate still needs confirmation | confirmed supplier, unknown cadence |
-| Olive oil and spices | stock-based | Ask only when estimated low; never place automatically every cycle | confirmed pantry items |
+| Bertolli Originale extra-virgin olive oil, 500 ml bottle | four-week pantry cycle | The Flink receipt from 5 September 2026 shows exactly one 500 ml bottle, not two. Current visible stock on 20 September is one full 500 ml bottle plus about 20% of a second bottle, approximately 600 ml total. Proposed consumption is about 40–50 ml/day, so the current stock covers roughly 12–15 days. For approximately four weeks of coverage, buy two new 500 ml bottles now; together with current stock this yields about 1.6 L, or roughly 32–40 days at the stated range. Refine the consumption estimate from the next measured run-out rather than assuming it is exact | confirmed receipt quantity, package size, current stock, and current purchase quantity; consumption estimate proposed |
+| Spices | stock-based | Ask only when estimated low; never place automatically every cycle | confirmed pantry items |
 | Dark chocolate | capped stock | Maximum one pack at home | confirmed rule |
 
 ## Minimal weekly interaction
