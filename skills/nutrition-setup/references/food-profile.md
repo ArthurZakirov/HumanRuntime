@@ -62,6 +62,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Current frozen-vegetable stock is approximately 1.5 kg broccoli, 400 g spinach, and 400 g Kaiser vegetable mix, about 2.3 kg total and informally rounded to roughly 2.5 kg. Buy no frozen vegetables in the current order.
 - Fresh broccoli: buy one approximately 500 g unit from Flink every week. Additional frozen coverage follows two staggered four-week cycles: exactly four 750 g broccoli packs, 3 kg total, from Flaschenpost; fourteen days offset, exactly 1 kg frozen cauliflower plus 600 g frozen REWE Bio leaf spinach from Flink. The next frozen order is the 1.6 kg Flink block in fourteen days, followed by the 3 kg Flaschenpost block fourteen days later.
 - Frozen Brussels sprouts are paused and excluded from the current rotation, while remaining documented for possible future reactivation.
+- Frozen kale is paused and excluded from the current rotation, while remaining documented for possible future reactivation.
 - Fresh carrots: approximately 1 kg per week.
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.
 - Kimchi and sauerkraut fit the established pattern; both original and mild kimchi have been purchased.

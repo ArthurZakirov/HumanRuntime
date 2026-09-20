@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| VEG-007 | Kale, frozen | frozen or preserved vegetables | food profile | unreviewed | grouped frozen-vegetable row | Need exact form and supplier |
 | VEG-009 | Scandinavian vegetable mix, frozen | frozen or preserved vegetables | Flink-basket summary | unreviewed | grouped frozen-vegetable row | Distinct product listing |
 | PRO-001 | Raw chicken, fresh or non-pre-cooked frozen | meat and seafood | preparation-routines safety exclusion | unreviewed | none | Must remain distinct from proven pre-cooked frozen chicken; likely incompatible until a safe method is established |
 | LEG-001 | Black beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
@@ -98,6 +97,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-004 | Cauliflower, frozen | resolved | active; exactly 1 kg from Flink every four weeks in one block with 600 g leaf spinach, staggered fourteen days from the Flaschenpost broccoli block; none in the current order, first block in fourteen days | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 | VEG-005 | Spinach, frozen | resolved | active; exactly 600 g REWE Bio leaf spinach from Flink every four weeks in one block with 1 kg cauliflower, staggered fourteen days from the Flaschenpost broccoli block; current stock approximately 400 g | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 | VEG-006 | Brussels sprouts, frozen | resolved | paused; excluded from the current rotation and recurring shopping, retained for possible future reactivation | `Frozen Brussels sprouts` | 2026-09-20 |
+| VEG-007 | Kale, frozen | resolved | paused; excluded from the current rotation and recurring shopping, retained for possible future reactivation | `Frozen kale` | 2026-09-20 |
 | VEG-008 | Kaiser vegetable mix, frozen | resolved | accepted existing stock; approximately 400 g currently present, but not part of the fixed recurring blocks | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 
 ## Completion gate
