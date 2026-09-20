@@ -66,6 +66,7 @@ The September 2026 basket contained 44 product lines and is evidence of preferen
 - Protein: seven packs of pre-cooked frozen chicken fillet steaks, salmon portions, tuna.
 - Legumes: chickpeas, white beans, black beans, brown lentils.
 - Other recurring foods: kimchi, olive oil, oats, coffee, corn cakes, rice cakes, and lentil cakes. Jarred mushrooms and pumpernickel are currently paused and must not surface automatically.
+- Seasonal tea: from the next four-week autumn/winter order, one pack turmeric chai and one pack ginger-lemon tea; prefer Yogi Tea but accept a close equivalent when unavailable. Buy none in the current cycle because existing bags cover the month.
 
 ## Historical eight-week planning quantities
 

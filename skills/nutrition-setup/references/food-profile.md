@@ -58,6 +58,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Extra-virgin olive oil is a staple.
 - Beef bone broth and apple-cider vinegar are REWE-only pantry options and unavailable at Flink. Their quantities and cadence remain conditional until confirmed.
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
+- Preferred cold-season teas are Yogi Tea turmeric chai and ginger-lemon tea, or close equivalents. Current stock is about ten and six tea bags respectively, so buy none now; from the next four-week cycle, buy one pack of each per cycle while the autumn and winter routine remains active.
 
 ## Fruit, vegetables, and fermented foods
 
