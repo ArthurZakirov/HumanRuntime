@@ -4,6 +4,8 @@
 
 Generate the relevant shopping list automatically so Arthur does not have to remember every regularly consumed food. Weekly perishables should surface frequently; durable reserves should stay hidden until their stock or predicted coverage approaches the reorder point.
 
+Catalogue completeness is tracked separately in [food-review-ledger.md](food-review-ledger.md). The operational table below is not proof that every historical or potential food has been reviewed. Never claim completeness while that ledger contains unresolved candidates or an unreconciled source pool.
+
 ## One canonical food table
 
 Start with one food table. Add a linked shops table only when shop-level details would otherwise be repeated across several foods.
@@ -155,6 +157,7 @@ Never delete a historically relevant food merely because it leaves the current r
 | Pumpkin seeds and sunflower seeds | conditional | Flink intermittent or unavailable; check REWE/dm during a combined trip | optional stock item | These are occasional pantry options, not fixed recurring purchases yet. Surface only when Arthur wants them or existing stock is known to be low; never create a separate trip for them | confirmed availability problem; cadence and quantity unknown |
 | Beef bone broth | conditional | REWE only; unavailable at Flink | stock-based REWE item | Retain as an occasional product. Add it only to an already planned REWE gap list when Arthur confirms that it is wanted or low; current quantity and cadence are not yet established | confirmed supplier; cadence and quantity unknown |
 | Apple-cider vinegar | conditional | REWE only; unavailable at Flink | stock-based REWE item | Retain as an occasional pantry product. Add it only to an already planned REWE gap list when Arthur confirms that it is wanted or low; current quantity and cadence are not yet established | confirmed supplier; cadence and quantity unknown |
+| Fresh whole pomegranate | paused | Do not shop while paused; supplier irrelevant until reactivation | paused fresh fruit form | Fresh whole pomegranates are intentionally inactive because opening and removing the seeds creates too much friction and the fruit may spoil. The active replacement is frozen ready-to-use pomegranate seeds. Keep this as a separate form so an agent never substitutes a whole fresh fruit for the frozen product unless Arthur explicitly reactivates it | confirmed pause, reason, and replacement form |
 | Protein powder | active | Myprotein direct | long-cycle stock with manual visual reorder | Approximately 5 kg were recently replenished. At an average consumption of about 50 g/day, the mathematical coverage is roughly 100 days, or a little over three months. Do not create a calendar task or fixed recurring schedule. Arthur will notice the remaining bags in the cupboard and initiate replenishment when the visible stock becomes low | confirmed approximate stock, consumption, coverage, supplier, and manual reorder rule |
 | Creatine | active | Amazon / ProFuel | annual stock | Approximately one year of ProFuel supply; do not surface in weekly lists | confirmed stock |
 | Magnesium, L-theanine, omega-3 | active | Sunday Natural | long-cycle stock | Sunday Natural; depletion rate still needs confirmation | confirmed supplier, unknown cadence |
