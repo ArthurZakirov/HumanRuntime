@@ -54,8 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| VEG-001 | Onion, fresh whole | fresh vegetables and aromatics | current user correction | unreviewed | none | Need current status, form, quantity, preparation compatibility, and supplier |
-| VEG-002 | Garlic, fresh whole bulb or cloves | fresh vegetables and aromatics | current user correction and exact Flink receipt `Knoblauch 200g` | unreviewed | none | Keep separate from garlic granules |
 | VEG-003 | Sweet potato, fresh whole | fresh vegetables and aromatics | current user correction and proposed Sistema routine | unreviewed | none | Proposed preparation exists but current shopping status and tested method do not |
 | VEG-004 | Cauliflower, frozen | frozen or preserved vegetables | food profile and Flink-basket summary | unreviewed | grouped frozen-vegetable row | Split because availability may differ |
 | VEG-005 | Spinach, frozen | frozen or preserved vegetables | food profile and current stock discussion | unreviewed | grouped frozen-vegetable row | Split because availability and package form may differ |
@@ -99,6 +97,8 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | --- | --- | --- | --- | --- | --- |
 | FRU-001 | Mandarin or clementine, fresh whole fruit | resolved | active citrus check every week; buy a roughly 750 g net for one week, but treat a 1 kg net as two-week stock and do not repurchase it the following week; use oranges as the fallback with the same quantity logic | `Fresh mandarins or clementines` | 2026-09-20 |
 | FRU-002 | Pomegranate, fresh whole fruit | resolved | paused; frozen ready-to-use seeds are the active replacement | `Fresh whole pomegranate` | 2026-09-20 |
+| VEG-001 | Onion, fresh whole | resolved | active monthly stock check; current seven small red onions cover about two weeks at roughly half to one onion per day; buy one normal pack only when the remaining stock will not cover the next cycle | `Fresh whole onions` | 2026-09-20 |
+| VEG-002 | Garlic, fresh whole bulb or cloves | resolved | active manual-only long-life item; do not track or schedule; Arthur adds it himself when visibly low | `Fresh whole garlic` | 2026-09-20 |
 
 ## Completion gate
 
