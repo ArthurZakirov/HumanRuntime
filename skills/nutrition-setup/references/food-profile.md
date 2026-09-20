@@ -40,8 +40,8 @@ Quantities describe prior planning and should be reconciled with current invento
 ## Carbohydrate and legume rotation
 
 - Prefer rotation rather than relying heavily on rice.
-- Bread, including pumpernickel and packaged whole-grain bread, is currently excluded because Arthur wants to remain bread-free. Do not surface it or substitute it for another carbohydrate unless he explicitly reactivates it.
-- Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, buckwheat flakes, and a small amount of chickpeas. Microwave rice is no longer active because ready-to-eat lentils, beans, and chickpeas fully replace it. Ready-to-eat cooked potatoes are also inactive because Flink does not offer a suitable delivered product.
+- Bread, including pumpernickel and packaged whole-grain bread, is currently paused because Arthur wants to remain bread-free. Retain it as a possible future option, but do not surface or substitute it for another carbohydrate unless he explicitly reactivates it.
+- Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, buckwheat flakes, and a small amount of chickpeas. Microwave rice is currently paused because ready-to-eat lentils, beans, and chickpeas fully replace it. Ready-to-eat cooked potatoes and buckwheat flakes are also paused because Flink does not offer suitable delivered products. Retain all three for possible future reactivation rather than deleting them.
 - Beans and lentils are preferred over chickpeas.
 - Ready-to-eat legumes are a monthly pantry purchase. Current consumption is approximately four to five tins, jars, or pouches per week; the working target is about 20 units after replenishment, with beans and lentils favored over chickpeas.
 - Dry grains that require stovetop cooking are poor defaults; ready-to-eat tins, jars, pouches, or flakes are better fits.
@@ -49,7 +49,7 @@ Quantities describe prior planning and should be reconciled with current invento
 ## Fats, seeds, seasonings, and pantry
 
 - Natural nut mix is an acceptable default; walnuts and occasional macadamias have also been purchased.
-- Chia is a four-week pantry review item: approximately 200 g remain, consumption is about 6–8 g/day, and no purchase is needed until the next monthly cycle. Flaxseed is an approximately eight-week pantry item; current stock is empty and one pack belongs in the current order. Hulled hemp seed is excluded because its price does not justify the benefit for Arthur.
+- Chia is a four-week pantry review item: approximately 200 g remain, consumption is about 6–8 g/day, and no purchase is needed until the next monthly cycle. Flaxseed is an approximately eight-week pantry item; current stock is empty and one pack belongs in the current order. Hulled hemp seed is paused because its price does not justify the benefit for Arthur; retain it for possible future reactivation.
 - Extra-virgin olive oil is a staple.
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
 
@@ -60,7 +60,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Fresh carrots: approximately 1 kg per week.
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.
 - Kimchi and sauerkraut fit the established pattern; both original and mild kimchi have been purchased.
-- Sauerkraut is no longer active. It was originally chosen for expected live cultures, but ordinary supermarket products did not reliably meet that purpose; Kimchi now fully replaces it. Do not treat the two as additive fermented-food staples.
+- Sauerkraut is currently paused. It was originally chosen for expected live cultures, but ordinary supermarket products did not reliably meet that purpose; Kimchi now fully replaces it. Retain sauerkraut for possible future reactivation, but do not treat the two as additive fermented-food staples.
 - Complete Organics kimchi in 240 g refrigerated jars: current working consumption is approximately two jars per week.
 
 ## Preference and friction rules
@@ -69,7 +69,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Price, availability, convenience, and consistency matter strongly.
 - Arthur wants food in usable condition and does not consider small refunds a good substitute for receiving the required food.
 - Historically, fruit, berries, grapes, broccoli, eggs, and raw meat or fish were treated as quality-sensitive because selection and transport condition matter. This is a preference signal, not an absolute ban on delivery. Do not include Arthur's normal jarred mushrooms in this fresh-food category.
-- Dark chocolate is excluded from Arthur's diet and recurring shopping. Do not surface or buy it unless he explicitly reactivates it; this replaces the earlier one-pack maximum.
+- Dark chocolate is paused in Arthur's diet and recurring shopping. Retain it for possible future reactivation, but do not surface or buy it unless he explicitly reactivates it; this replaces the earlier one-pack maximum.
 - Fresh apples are currently paused after a systematic local quality problem: Arthur inspected multiple REWE crates and varieties, observed recurring discoloration or texture changes around the stem area that predicted internal spoilage, and still discarded more than half of the least-bad selected apples; an office apple also had internal pest damage. Do not add apples to a cart unless Arthur explicitly restarts them after local supply quality changes.
 - Fruit consumption works as a shared volume across interchangeable fruits. Removing apples increases the required amount of bananas, kiwi, grapes, berries, or other accepted fruit rather than simply reducing total fruit intake.
 - Bananas: current working rhythm is approximately one per day, purchased weekly rather than as a two-week fresh supply.
