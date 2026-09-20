@@ -19,6 +19,17 @@ The active canonical list has not yet been finalized. Historical baskets and pla
 
 Direct Flink preorder availability is conditional rather than categorically present or absent. On Sunday, 20 September 2026, the direct Flink site offered Monday delivery from 08:00–09:00 under “Heute planen, morgen genießen”; on the preceding Saturday evening it showed closed and blocked checkout. Re-check the address-specific live checkout each time instead of assuming that direct preorder is always unavailable or always available.
 
+## Verified reuse and scheduling capabilities
+
+Read-only browser inspection on 20 September 2026 established the following current capabilities:
+
+- Direct Flink exposes one persistent ordinary cart and an order-history page, but no visible named lists, multiple saved carts, or repeat-order control. Treat it as a single working cart, not as three cycle templates.
+- Wolt/Flink exposes `Warenkörbe` and `Nochmal bestellen`. The repeat-order area was empty because no prior Wolt order existed, but its interface explicitly states that completed orders appear there for quick reordering. Seeded weekly, biweekly, and four-week orders can therefore become practical historical templates, although they are not freely named lists and must still be reconciled with the canonical inventory rules.
+- Wolt/Flink supports preordering through a day and one-hour delivery-window selector. On Sunday, 20 September 2026, the visible day range extended through Saturday, 26 September, with windows from 09:00–10:00 through 22:00–23:00 for that store. This is about six days of lead time, not an indefinite recurring-delivery schedule; verify the live horizon and slot availability each time.
+- Wolt's store-level favorite and `Gemeinsam bestellen` controls are not substitutes for named grocery-cycle templates.
+
+Closest practical automation: on the ordering day, generate the due cycle from the canonical list; use `Nochmal bestellen` for the most relevant prior Wolt order when available; reconcile quantities, substitutions, price, and stock; select a delivery window; stop for Arthur's final checkout confirmation; after a successful order, create or update a calendar block for the confirmed delivery window and list any unavailable essentials that still require a REWE/dm trip. Never create the calendar delivery block before the retailer has confirmed the slot.
+
 ## Suggested canonical-list fields
 
 The maintained schema and initial cadence classifications live in [inventory-system.md](inventory-system.md). Use that reference as the source of truth instead of duplicating field definitions here.
