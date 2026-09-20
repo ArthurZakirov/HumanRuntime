@@ -54,11 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| LEG-001 | Black beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
-| LEG-002 | White beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
-| LEG-003 | Brown or green lentils, ready-to-eat | legumes | food profile | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
-| LEG-004 | Black or Beluga lentils, ready-to-eat | legumes | food profile | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
-| LEG-005 | Chickpeas, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Lower preference than beans and lentils but needs explicit row |
 | GRN-001 | Dry rice | grains and starches | preparation-routines preference rule | unreviewed | none | Stovetop format is a poor fit; do not conflate with paused microwave rice |
 | GRN-002 | Dry quinoa | grains and starches | preparation-routines preference rule | unreviewed | none | Stovetop format is a poor fit |
 | NUT-001 | Walnuts | nuts and seeds | exact Flink receipt `ja! Walnüsse ganze Kerne 200g` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
@@ -99,6 +94,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-008 | Kaiser vegetable mix, frozen | resolved | accepted existing stock; approximately 400 g currently present, but not part of the fixed recurring blocks | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 | VEG-009 | Scandinavian vegetable mix, frozen | resolved | paused; historical Flink stopgap bought only because frozen broccoli was unavailable and the Flaschenpost broccoli source was not yet known; not a preferred product | `Frozen Scandinavian vegetable mix` | 2026-09-20 |
 | PRO-001 | Raw chicken and other raw meat, fresh or non-pre-cooked frozen | resolved | paused; excluded from current purchasing and preparation until Arthur explicitly reactivates a specific format with a safe proven method | `Raw or non-pre-cooked meat` | 2026-09-20 |
+| LEG-001–005 | Ready-to-eat black beans, white beans, brown or green lentils, black or Beluga lentils, and chickpeas | resolved | one shared monthly legume category; do not ask about individual varieties. Current stock is seven units; add fourteen mixed units now to reach about 21. Favor beans and lentils, with chickpeas as a lower-priority part of the mix; exact varieties follow price and availability | `Ready-to-eat beans, lentils, and chickpeas in tins, jars, or pouches` | 2026-09-20 |
 
 ## Completion gate
 
@@ -110,3 +106,5 @@ A full review is complete only when:
 - every resolved candidate maps to an operational row or an explicit duplicate;
 - umbrella rules such as the fresh-berry cap are not counted as individual foods; and
 - foods with different forms, suppliers, preparation compatibility, or cadence are not hidden inside one grouped row.
+
+An explicit user-defined interchangeable category is an exception to individual questioning. When Arthur has already set one shared quantity, supplier logic, and cadence for a group, resolve all named members together and never reopen each variety as a separate question unless its form, status, or sourcing rule actually differs. The ready-to-eat legume mix is the canonical example.
