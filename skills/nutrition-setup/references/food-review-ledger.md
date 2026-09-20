@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| FRU-001 | Mandarin or clementine, fresh whole fruit | fresh fruit | confirmed Cronometer mapping and current user correction | unreviewed | none | Need current status, weekly quantity, shelf-life experience, and supplier |
 | VEG-001 | Onion, fresh whole | fresh vegetables and aromatics | current user correction | unreviewed | none | Need current status, form, quantity, preparation compatibility, and supplier |
 | VEG-002 | Garlic, fresh whole bulb or cloves | fresh vegetables and aromatics | current user correction and exact Flink receipt `Knoblauch 200g` | unreviewed | none | Keep separate from garlic granules |
 | VEG-003 | Sweet potato, fresh whole | fresh vegetables and aromatics | current user correction and proposed Sistema routine | unreviewed | none | Proposed preparation exists but current shopping status and tested method do not |
@@ -98,6 +97,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 
 | ID | Candidate and product form | Review state | Resolution | Operational mapping | Reviewed on |
 | --- | --- | --- | --- | --- | --- |
+| FRU-001 | Mandarin or clementine, fresh whole fruit | resolved | active citrus check every week; buy a roughly 750 g net for one week, but treat a 1 kg net as two-week stock and do not repurchase it the following week; use oranges as the fallback with the same quantity logic | `Fresh mandarins or clementines` | 2026-09-20 |
 | FRU-002 | Pomegranate, fresh whole fruit | resolved | paused; frozen ready-to-use seeds are the active replacement | `Fresh whole pomegranate` | 2026-09-20 |
 
 ## Completion gate
