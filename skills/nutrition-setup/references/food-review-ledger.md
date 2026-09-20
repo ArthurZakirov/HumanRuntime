@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| GRN-001 | Dry rice | grains and starches | preparation-routines preference rule | unreviewed | none | Stovetop format is a poor fit; do not conflate with paused microwave rice |
 | GRN-002 | Dry quinoa | grains and starches | preparation-routines preference rule | unreviewed | none | Stovetop format is a poor fit |
 | NUT-001 | Walnuts | nuts and seeds | exact Flink receipt `ja! Walnüsse ganze Kerne 200g` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
 | NUT-002 | Macadamia nuts | nuts and seeds | exact Flink receipt `Kluth Macadamias geröstet & gesalzen` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
@@ -72,7 +71,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 | DRK-002 | Ginger-lemon tea | drinks | historical REWE workbook-analysis conversation | unreviewed | none | Previously described as seasonal winter product with no large reserve |
 | SUP-001 | AG1 powder | supplements and special bulk goods | confirmed Cronometer mapping | unreviewed | none | Need stock, supplier, cadence, and current active status |
 | SUP-002 | Vitamin D3 | supplements and special bulk goods | confirmed Cronometer mapping | unreviewed | none | Need exact current product, stock, cadence, and active status |
-| GRN-003 | Basmati rice, dry | grains and starches | historical REWE workbook-analysis conversation | unreviewed | none | Known historical food; likely paused because stovetop cooking is no longer wanted |
 
 ## Separate household-supplies candidate
 
@@ -94,7 +92,8 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-008 | Kaiser vegetable mix, frozen | resolved | accepted existing stock; approximately 400 g currently present, but not part of the fixed recurring blocks | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 | VEG-009 | Scandinavian vegetable mix, frozen | resolved | paused; historical Flink stopgap and not a preferred recurring product, but eligible as a one-order emergency substitute for an unavailable scheduled frozen vegetable under the category-equivalence rule | `Frozen Scandinavian vegetable mix` | 2026-09-20 |
 | PRO-001 | Raw chicken and other raw meat, fresh or non-pre-cooked frozen | resolved | paused; excluded from current purchasing and preparation until Arthur explicitly reactivates a specific format with a safe proven method | `Raw or non-pre-cooked meat` | 2026-09-20 |
-| LEG-001–005 | Ready-to-eat black beans, white beans, brown or green lentils, black or Beluga lentils, and chickpeas | resolved | one shared monthly legume category; do not ask about individual varieties. Current stock is seven units; add fourteen units now to reach about 21. Any canned, jarred, or pouched ready-to-eat legume may replace another unavailable one; priority is lentils, then beans of any type, then chickpeas. Rice is only a fourth-line category fallback whose exact form still requires confirmation | `Ready-to-eat beans, lentils, and chickpeas in tins, jars, or pouches` | 2026-09-20 |
+| LEG-001–005 | Ready-to-eat black beans, white beans, brown or green lentils, black or Beluga lentils, and chickpeas | resolved | one shared monthly legume category; do not ask about individual varieties. Current stock is seven units; add fourteen units now to reach about 21. Any canned, jarred, or pouched ready-to-eat legume may replace another unavailable one; priority is lentils, then beans of any type, then chickpeas. If none are available, leave the remaining quantity unfilled rather than substituting rice | `Ready-to-eat beans, lentils, and chickpeas in tins, jars, or pouches` | 2026-09-20 |
+| GRN-001 and GRN-003 | Dry rice, including Basmati | resolved | paused; stovetop preparation does not fit the current low-friction system. Keep separate from paused microwave rice and never use either form as an automatic legume fallback | `Dry rice, including Basmati` | 2026-09-20 |
 
 ## Completion gate
 
