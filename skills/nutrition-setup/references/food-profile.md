@@ -59,6 +59,7 @@ Quantities describe prior planning and should be reconciled with current invento
 ## Fruit, vegetables, and fermented foods
 
 - Vegetable target: approximately 300 g per day across broccoli, cauliflower, spinach, Brussels sprouts, kale, and similar vegetables rather than 300 g of each item.
+- Current frozen-vegetable stock is two unopened 750 g broccoli packs, one unopened 400 g butter-vegetable pack, and one opened spinach pack originally containing 600 g. The current order adds one frozen pack, preferably cauliflower or Brussels sprouts for variety; broccoli is only the fallback because it is already well stocked.
 - Fresh broccoli: at most one head per weekly purchase because a second fresh head may spoil before use. Additional coverage should come from frozen vegetables.
 - Fresh carrots: approximately 1 kg per week.
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.

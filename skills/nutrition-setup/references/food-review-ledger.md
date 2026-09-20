@@ -54,11 +54,7 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| VEG-004 | Cauliflower, frozen | frozen or preserved vegetables | food profile and Flink-basket summary | unreviewed | grouped frozen-vegetable row | Split because availability may differ |
-| VEG-005 | Spinach, frozen | frozen or preserved vegetables | food profile and current stock discussion | unreviewed | grouped frozen-vegetable row | Split because availability and package form may differ |
-| VEG-006 | Brussels sprouts, frozen | frozen or preserved vegetables | food profile and current availability discussion | unreviewed | grouped frozen-vegetable row | Flink is often unavailable |
 | VEG-007 | Kale, frozen | frozen or preserved vegetables | food profile | unreviewed | grouped frozen-vegetable row | Need exact form and supplier |
-| VEG-008 | Butter-vegetable mix, frozen | frozen or preserved vegetables | current stock discussion | unreviewed | grouped frozen-vegetable row | Distinct prepared mix |
 | VEG-009 | Scandinavian vegetable mix, frozen | frozen or preserved vegetables | Flink-basket summary | unreviewed | grouped frozen-vegetable row | Distinct product listing |
 | PRO-001 | Raw chicken, fresh or non-pre-cooked frozen | meat and seafood | preparation-routines safety exclusion | unreviewed | none | Must remain distinct from proven pre-cooked frozen chicken; likely incompatible until a safe method is established |
 | LEG-001 | Black beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
@@ -99,6 +95,10 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-001 | Onion, fresh whole | resolved | active monthly stock check; current seven small red onions cover about two weeks at roughly half to one onion per day; buy one normal pack only when the remaining stock will not cover the next cycle | `Fresh whole onions` | 2026-09-20 |
 | VEG-002 | Garlic, fresh whole bulb or cloves | resolved | active manual-only long-life item; do not track or schedule; Arthur adds it himself when visibly low | `Fresh whole garlic` | 2026-09-20 |
 | VEG-003 | Sweet potato, fresh whole | resolved | active fourteen-day cycle with target stock of two; current stock is two, so buy none in the current cycle and expect two in the next cycle after subtracting remaining stock | `Fresh whole sweet potatoes` | 2026-09-20 |
+| VEG-004 | Cauliflower, frozen | resolved | active variety option within the shared frozen-vegetable stock; preferred current-order choice together with frozen Brussels sprouts because broccoli is already well stocked | `Frozen broccoli, cauliflower, spinach, Brussels sprouts, kale or similar vegetables` | 2026-09-20 |
+| VEG-005 | Spinach, frozen | resolved | active within the shared frozen-vegetable stock; one opened 600 g pack is currently present, with remaining grams unknown | `Frozen broccoli, cauliflower, spinach, Brussels sprouts, kale or similar vegetables` | 2026-09-20 |
+| VEG-006 | Brussels sprouts, frozen | resolved | active variety option within the shared frozen-vegetable stock; preferred current-order choice together with frozen cauliflower because broccoli is already well stocked; Flink availability may fail | `Frozen broccoli, cauliflower, spinach, Brussels sprouts, kale or similar vegetables` | 2026-09-20 |
+| VEG-008 | Butter-vegetable mix, frozen | resolved | active within the shared frozen-vegetable stock; one unopened 400 g pack is currently present | `Frozen broccoli, cauliflower, spinach, Brussels sprouts, kale or similar vegetables` | 2026-09-20 |
 
 ## Completion gate
 
