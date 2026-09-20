@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| VEG-012 | Pickled cucumbers, jarred | frozen or preserved vegetables | historical REWE workbook-analysis conversation | unreviewed | none | Exact product, current status, supplier, and cadence need confirmation |
 | SPI-001 | Garlic granules, dried | condiments and spices | food profile | unreviewed | grouped manual-spice row | Keep separate from fresh garlic; likely manual |
 | SPI-002 | Curry powder or seasoning blend | condiments and spices | food profile and historical purchase analysis | unreviewed | grouped manual-spice row | Likely manual; retain exact form |
 | SPI-003 | Gyros seasoning blend | condiments and spices | food profile and historical purchase analysis | unreviewed | grouped manual-spice row | Likely manual; retain exact form |
@@ -91,6 +90,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | LEG-DRY | Dry lentils and all other uncooked dried legumes | resolved | paused as a product-form category; do not buy or use them to fill the active ready-to-eat monthly legume target | `Dry lentils and other dried legumes` | 2026-09-20 |
 | NUT-001–004 plus almonds | Individual walnuts, macadamias, hazelnuts, cashews, and almonds | resolved | paused as one category; the natural nut mix is the only active nut format. Do not ask about or buy individual varieties unless Arthur explicitly reactivates them | `Individual nut varieties` | 2026-09-20 |
 | VEG-010–011 | Champignons and chanterelles, cooked and jarred | resolved | paused for shopping as one preserved-mushroom category. Approximately 2 kg are already stocked; ignore for now. Consider a four-week cadence only after actual consumption speed and the after-opening freezer-portion routine are validated | `Mushrooms, especially jarred champignons or chanterelles` | 2026-09-20 |
+| VEG-012 | Pickled cucumbers, jarred | resolved | paused; retain in the inventory but do not schedule or buy until Arthur explicitly reactivates it | `Pickled cucumbers, jarred` | 2026-09-20 |
 
 ## Completion gate
 
