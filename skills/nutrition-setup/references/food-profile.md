@@ -43,14 +43,17 @@ Quantities describe prior planning and should be reconciled with current invento
 - Bread, including pumpernickel and packaged whole-grain bread, is currently paused because Arthur wants to remain bread-free. Retain it as a possible future option, but do not surface or substitute it for another carbohydrate unless he explicitly reactivates it.
 - Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, buckwheat flakes, and a small amount of chickpeas. Microwave rice is currently paused because ready-to-eat lentils, beans, and chickpeas fully replace it. Ready-to-eat cooked potatoes and buckwheat flakes are also paused because Flink does not offer suitable delivered products. Retain all three for possible future reactivation rather than deleting them.
 - Beans and lentils are preferred over chickpeas.
+- Buckwheat flakes are an optional experiment rather than a staple. They are available at dm, not Flink; mention them again in about one month and combine any purchase with an already planned REWE trip because dm is next to REWE. Do not give them a fixed recurring schedule.
 - Ready-to-eat legumes are a monthly pantry purchase. Current consumption is approximately four to five tins, jars, or pouches per week; the working target is about 20 units after replenishment, with beans and lentils favored over chickpeas.
 - Dry grains that require stovetop cooking are poor defaults; ready-to-eat tins, jars, pouches, or flakes are better fits.
 
 ## Fats, seeds, seasonings, and pantry
 
 - Natural nut mix is an acceptable default; walnuts and occasional macadamias have also been purchased.
+- Almonds, pumpkin seeds, and sunflower seeds remain optional possibilities, but Flink availability is unreliable or absent. Check them only during a combined REWE/dm trip when Arthur has explicitly confirmed a current need.
 - Chia is a four-week pantry review item: approximately 200 g remain, consumption is about 6–8 g/day, and no purchase is needed until the next monthly cycle. Flaxseed is an approximately eight-week pantry item; current stock is empty and one pack belongs in the current order. Hulled hemp seed is paused because its price does not justify the benefit for Arthur; retain it for possible future reactivation.
 - Extra-virgin olive oil is a staple.
+- Beef bone broth and apple-cider vinegar are REWE-only pantry options and unavailable at Flink. Their quantities and cadence remain conditional until confirmed.
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
 
 ## Fruit, vegetables, and fermented foods

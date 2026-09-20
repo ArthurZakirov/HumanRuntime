@@ -9,8 +9,9 @@ Reduce grocery-order preparation from roughly an hour to a short review. The mai
 1. Maintain one canonical recurring list with desired quantity, preferred product, acceptable substitutes, price ceiling, and whether the item is required or optional.
 2. Keep a prepared cart in the chosen delivery service. Wolt exposed `Deine Bestellungen` with both `Warenkörbe` and `Nochmal bestellen` when verified on 20 September 2026; re-check the current UI before promising persistence or exact quantity restoration. Use a saved Flink cart as the fast operational copy when it remains suitable.
 3. Before ordering, reconcile the saved cart against current inventory and the canonical list.
-4. Resolve unavailable items using explicit substitutes rather than open-ended browsing.
-5. Review changed prices, quantities, fees, and delivery time, then let Arthur confirm the final purchase and payment.
+4. Resolve unavailable items using explicit substitutes or the stored backup shop rather than open-ended browsing.
+5. On every second Saturday, review all important Flink gaps. If ordinary carrots, suitable frozen chicken, affordable salmon, or other required acceptable forms are unavailable, prepare a compact in-person REWE list and use REWE that Saturday; this may supplement or replace the Flink order.
+6. Review changed prices, quantities, fees, and delivery time, then let Arthur confirm the final purchase and payment.
 
 The saved shop cart is a convenience cache, not the source of truth: listings can disappear, bundle sizes can change, and quantities can become stale.
 
@@ -35,6 +36,8 @@ For the initial implementation, keep the preferred shop and exact product direct
 - For products with long safe shelf life, minimize order frequency by replenishing toward the largest practical target stock that fits the available refrigerator, freezer, or pantry capacity and will be consumed before the printed date. Do not default every item to the same one- or two-week horizon.
 - Keep final checkout human-confirmed because prices, stock, substitutions, service fees, and delivery windows change.
 - Exclude products that cannot be prepared with the currently usable microwave and steamer setup. Availability alone is not enough.
+- Treat the requested form and price band as part of availability. Do not count peeled, pre-cut carrots at a large premium as a substitute for ordinary raw unpeeled carrots; do not buy overpriced pears; and keep salmon within its stored price ceiling.
+- Batch non-Flink gaps into the fourteen-day REWE decision instead of creating repeated one-product trips. Track dm-only goods, such as buckwheat flakes, separately but buy them on the same physical trip whenever a REWE visit is already planned, because dm is next to REWE.
 
 ## Known suppliers and long-cycle stock
 
@@ -45,6 +48,8 @@ These are current stock and replenishment signals, not fully specified recurring
 - Myprotein: several kilograms of protein powder in stock; expected replenishment horizon is roughly three to four months, subject to actual consumption.
 - Sunday Natural: magnesium, L-theanine, and omega-3 products in use.
 - Amazon / ProFuel: approximately one year of creatine reserve purchased.
+- REWE in person: recurring fallback for ordinary raw carrots, suitable frozen chicken breast, affordable salmon when stocked, ready-to-eat cooked potatoes, beef bone broth, apple-cider vinegar, and other important products unavailable or unsuitable at Flink.
+- dm: known source for buckwheat flakes; batch dm-only needs rather than searching Flink.
 - Complete Organics direct shop is a comparison source, not the default bulk supplier. On 20 September 2026, shipping within Germany was free from EUR 49; `Alle Fermente` cost EUR 47.99 for ten mixed jars and the six-jar `Kimchi Set` cost EUR 29.99. At the same time, Arthur's logged-in Flink shop offered both 240 g Mild and Original Complete Organics Kimchi for EUR 4.79 each. Therefore the manufacturer's advertised set discount did not beat Flink's per-jar price: the direct six-pack was about EUR 5.00 per jar and the ten-jar mixed set about EUR 4.80 per jar, with some mixed-set jars smaller than 240 g. Compare actual normalized end prices rather than discount percentages; when Flink is already used for the grocery order, allocate no extra delivery charge to kimchi unless adding it changes the order fee.
 
 Track supplier, current reserve, expected depletion, and reorder rule separately from ordinary weekly groceries. Do not place these long-cycle products into every Wolt or Flink cart.
