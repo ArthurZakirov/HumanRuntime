@@ -60,6 +60,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
 - Preferred cold-season teas are Yogi Tea turmeric chai and ginger-lemon tea, or close equivalents. Current stock is about ten and six tea bags respectively, so buy none now; from the next four-week cycle, buy one pack of each per cycle while the autumn and winter routine remains active.
 - AG1 is a supplement and is currently paused; do not track or buy it.
+- Vitamin D3 is active and stocked, but has no fixed purchase cadence. Arthur monitors the reserve visually and will request replenishment when it runs low; do not create automatic reminders.
 
 ## Fruit, vegetables, and fermented foods
 

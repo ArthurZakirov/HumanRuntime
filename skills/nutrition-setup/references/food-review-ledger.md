@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| SUP-002 | Vitamin D3 | supplements and special bulk goods | confirmed Cronometer mapping | unreviewed | none | Need exact current product, stock, cadence, and active status |
 
 ## Separate household-supplies candidate
 
@@ -86,6 +85,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | SPI-001–005 | Garlic granules, curry, gyros seasoning, dill, and iodized salt | resolved | manual category; do not track, schedule, or ask about individual seasonings. Arthur adds the required product himself when it is visibly empty. Keep dried garlic granules conceptually separate from fresh garlic | `Seasonings and salt` | 2026-09-20 |
 | DRK-001–002 | Turmeric chai and ginger-lemon tea, tea bags | resolved | active seasonal autumn/winter category. Current stock about ten and six bags respectively; buy none now. Starting next four-week cycle, buy one pack of each, preferably Yogi Tea or a close equivalent | `Yogi Tea turmeric chai and ginger-lemon tea` | 2026-09-20 |
 | SUP-001 | AG1 powder supplement | resolved | paused; do not track, schedule, or buy until Arthur explicitly reactivates it | `AG1 powder supplement` | 2026-09-20 |
+| SUP-002 | Vitamin D3 supplement | resolved | active manual stock item; a reserve is available, with no fixed cadence or automatic reminder. Arthur will report when stock is low, then the exact product and purchase details can be chosen | `Vitamin D3 supplement` | 2026-09-20 |
 
 ## Completion gate
 
