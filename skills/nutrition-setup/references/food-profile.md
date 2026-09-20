@@ -58,9 +58,10 @@ Quantities describe prior planning and should be reconciled with current invento
 
 ## Fruit, vegetables, and fermented foods
 
-- Vegetable target: approximately 300 g per day across broccoli, cauliflower, spinach, Brussels sprouts, kale, and similar vegetables rather than 300 g of each item.
-- Current frozen-vegetable stock is two unopened 750 g broccoli packs, one unopened 400 g butter-vegetable pack, and one opened spinach pack originally containing 600 g. The current order adds one frozen pack, preferably cauliflower or Brussels sprouts for variety; broccoli is only the fallback because it is already well stocked.
-- Fresh broccoli: at most one head per weekly purchase because a second fresh head may spoil before use. Additional coverage should come from frozen vegetables.
+- Vegetable target: approximately 200–300 g per day across broccoli, cauliflower, spinach, Brussels sprouts, kale, and similar vegetables rather than that amount of each item. Broccoli is the favorite and should represent roughly 50% or more, but the ratio is deliberately flexible.
+- Current frozen-vegetable stock is approximately 1.5 kg broccoli, 400 g spinach, and 400 g Kaiser vegetable mix, about 2.3 kg total and informally rounded to roughly 2.5 kg. Buy no frozen vegetables in the current order.
+- Fresh broccoli: buy one approximately 500 g unit from Flink every week. Additional frozen coverage follows two staggered four-week cycles: exactly four 750 g broccoli packs, 3 kg total, from Flaschenpost; fourteen days offset, exactly 1 kg frozen cauliflower plus 600 g frozen REWE Bio leaf spinach from Flink. The next frozen order is the 1.6 kg Flink block in fourteen days, followed by the 3 kg Flaschenpost block fourteen days later.
+- Frozen Brussels sprouts are paused and excluded from the current rotation, while remaining documented for possible future reactivation.
 - Fresh carrots: approximately 1 kg per week.
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.
 - Kimchi and sauerkraut fit the established pattern; both original and mild kimchi have been purchased.
