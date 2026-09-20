@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nutrition Setup"
+  short_description: "Arthur's household food and kitchen context"
+  default_prompt: "Use my established household food, kitchen, storage, and grocery context for this task."

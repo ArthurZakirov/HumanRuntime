@@ -9,6 +9,7 @@ HumanRuntime packages reusable agent skills for the personal systems that keep a
 - `cronometer-diary` logs dictated meals in Cronometer and maintains confirmed food mappings and reusable meal bundles.
 - `desk-ergonomics-setup` records the physical desk, furniture, charging, lighting, and ergonomic context used for workspace decisions.
 - `laundry-planner` maintains a textile-care inventory and builds compatible, sufficiently full AppWash loads.
+- `nutrition-setup` supplies Arthur's established food preferences, kitchen equipment, preparation routines, storage context, and grocery-shopping system.
 
 These skills may contain explicitly approved personal routines and equipment details. They must not contain addresses, account credentials, insurance information, career targets, employer-internal material, or other unapproved private records.
 

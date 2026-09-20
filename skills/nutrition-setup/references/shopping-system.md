@@ -1,0 +1,88 @@
+# Grocery shopping system
+
+## Objective
+
+Reduce grocery-order preparation from roughly an hour to a short review. The main difficulty is not payment; it is reconstructing the product list, finding exact listings, choosing substitutes, and deciding quantities under time pressure.
+
+## Current preferred workflow
+
+1. Maintain one canonical recurring list with desired quantity, preferred product, acceptable substitutes, price ceiling, and whether the item is required or optional.
+2. Keep a prepared cart in the chosen delivery service. Wolt exposed `Deine Bestellungen` with both `Warenkörbe` and `Nochmal bestellen` when verified on 20 September 2026; re-check the current UI before promising persistence or exact quantity restoration. Use a saved Flink cart as the fast operational copy when it remains suitable.
+3. Before ordering, reconcile the saved cart against current inventory and the canonical list.
+4. Resolve unavailable items using explicit substitutes rather than open-ended browsing.
+5. Review changed prices, quantities, fees, and delivery time, then let Arthur confirm the final purchase and payment.
+
+The saved shop cart is a convenience cache, not the source of truth: listings can disappear, bundle sizes can change, and quantities can become stale.
+
+The active canonical list has not yet been finalized. Historical baskets and planning quantities below are evidence for drafting it, not permission to order those quantities.
+
+Direct Flink preorder availability is conditional rather than categorically present or absent. On Sunday, 20 September 2026, the direct Flink site offered Monday delivery from 08:00–09:00 under “Heute planen, morgen genießen”; on the preceding Saturday evening it showed closed and blocked checkout. Re-check the address-specific live checkout each time instead of assuming that direct preorder is always unavailable or always available.
+
+## Suggested canonical-list fields
+
+The maintained schema and initial cadence classifications live in [inventory-system.md](inventory-system.md). Use that reference as the source of truth instead of duplicating field definitions here.
+
+For the initial implementation, keep the preferred shop and exact product directly on each food row. Add a separate linked `Shops` table only when shop-level information—membership, delivery threshold, fees, account-specific cadence, or several products from the same supplier—would otherwise be duplicated. A food may link to more than one shop in ranked order.
+
+## Ordering rules
+
+- Prefer inexpensive conventional products unless organic quality has a specific requested benefit.
+- Normalize prices per kilogram, liter, or item before comparing.
+- Prefer familiar REWE/`ja!` products when price and availability are good; brand is often less important than product type.
+- Prefer fewer suppliers and fewer fees when the assortment is adequate.
+- Do not silently replace a required product with a materially different one. Follow the stored substitution order or ask.
+- Avoid accumulating excess perishables. For pantry goods, replenish toward a target stock rather than blindly repeating every historical quantity.
+- For products with long safe shelf life, minimize order frequency by replenishing toward the largest practical target stock that fits the available refrigerator, freezer, or pantry capacity and will be consumed before the printed date. Do not default every item to the same one- or two-week horizon.
+- Keep final checkout human-confirmed because prices, stock, substitutions, service fees, and delivery windows change.
+- Exclude products that cannot be prepared with the currently usable microwave and steamer setup. Availability alone is not enough.
+
+## Known suppliers and long-cycle stock
+
+These are current stock and replenishment signals, not fully specified recurring orders:
+
+- Flaschenpost: a bulk purchase of Schwarzwaldmilch covering roughly one month; likely recurring supplier for that milk.
+- Bugs Trait: 1 kg of freeze-dried egg preordered, creating a shelf-stable egg reserve.
+- Myprotein: several kilograms of protein powder in stock; expected replenishment horizon is roughly three to four months, subject to actual consumption.
+- Sunday Natural: magnesium, L-theanine, and omega-3 products in use.
+- Amazon / ProFuel: approximately one year of creatine reserve purchased.
+- Complete Organics direct shop is a comparison source, not the default bulk supplier. On 20 September 2026, shipping within Germany was free from EUR 49; `Alle Fermente` cost EUR 47.99 for ten mixed jars and the six-jar `Kimchi Set` cost EUR 29.99. At the same time, Arthur's logged-in Flink shop offered both 240 g Mild and Original Complete Organics Kimchi for EUR 4.79 each. Therefore the manufacturer's advertised set discount did not beat Flink's per-jar price: the direct six-pack was about EUR 5.00 per jar and the ten-jar mixed set about EUR 4.80 per jar, with some mixed-set jars smaller than 240 g. Compare actual normalized end prices rather than discount percentages; when Flink is already used for the grocery order, allocate no extra delivery charge to kimchi unless adding it changes the order fee.
+
+Track supplier, current reserve, expected depletion, and reorder rule separately from ordinary weekly groceries. Do not place these long-cycle products into every Wolt or Flink cart.
+
+## Observed large Flink basket
+
+The September 2026 basket contained 44 product lines and is evidence of preferences, not a weekly template. Representative groups:
+
+- Frozen vegetables: cauliflower, Scandinavian vegetable mix, creamed mixed vegetables, spinach.
+- Nuts: natural mixed nuts, walnuts, macadamias.
+- Fruit: blueberries, grapes, bananas, strawberries, pomegranate, red pepper, avocado, melon, lemons.
+- Dairy: Fage yogurt and Andechser kefir.
+- Protein: seven packs of pre-cooked frozen chicken fillet steaks, salmon portions, tuna.
+- Legumes: chickpeas, white beans, black beans, brown lentils.
+- Other recurring foods: mushrooms, kimchi, olive oil, oats, coffee, pumpernickel, corn cakes, rice cakes, and lentil cakes.
+
+## Historical eight-week planning quantities
+
+These were proposed from stated consumption, not permanently approved standing orders:
+
+- Oats: about 4.5 kg, practically nine 500 g packs.
+- Nuts: about 2.8 kg.
+- Ground coffee: about 1.68 kg, practically four 500 g packs.
+- Protein UHT milk: 16 one-liter cartons, subject to shelf life and storage.
+- Fish tins: about 16–20, favoring mackerel and sardines.
+- Rice cakes: about 12 packs.
+- A mixed rotation of ready-to-eat lentils, black beans, white beans, a few chickpeas, cooked potatoes, microwave rice, and buckwheat flakes.
+
+Always check present stock, current consumption, available storage, and minimum shelf life before using these quantities.
+
+## Provenance
+
+The maintained context was consolidated from:
+
+- ChatGPT conversation `REWE Ausgaben analysieren`, including the workbook `REWE_Lebensmittelprofil_und_Einkaufsstrategie.xlsx` derived from 17 eBons.
+- ChatGPT conversation `Backofen identifizieren`.
+- ChatGPT conversation `Kühlschrankwahl und Stauraumplanung`.
+- A confirmed Flink email receipt from September 2026.
+- A confirmed OTTO delivery record for the refrigerator model.
+
+Do not store conversation IDs, order identifiers, addresses, account data, or payment data in this public skill.

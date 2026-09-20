@@ -1,0 +1,155 @@
+# Inventory and replenishment system
+
+## Goal
+
+Generate the relevant shopping list automatically so Arthur does not have to remember every regularly consumed food. Weekly perishables should surface frequently; durable reserves should stay hidden until their stock or predicted coverage approaches the reorder point.
+
+## One canonical food table
+
+Start with one food table. Add a linked shops table only when shop-level details would otherwise be repeated across several foods.
+
+Each food row should contain:
+
+- `Food`: stable user-facing name.
+- `Category`: fruit, vegetable, dairy, protein, legume, pantry, drink, supplement, or other.
+- `Preferred product`: exact listing when stable.
+- `Product form`: fresh, frozen raw, frozen pre-cooked, refrigerated, UHT, dried, powder, canned, jarred, pouch, or another explicit form. This field is mandatory for every active row.
+- `Preferred shop`: primary supplier.
+- `Backup shops`: ranked alternatives.
+- `Storage`: refrigerator, freezer, pantry, or other.
+- `Shelf-life class`: days, weeks, months, or years when unopened; keep exact shelf life unknown unless the package or manufacturer confirms it.
+- `After-opening rule`: refrigerated duration or immediate-use expectation when relevant.
+- `Preparation status`: proven, ready-to-eat, needs a verified method, or incompatible with current equipment.
+- `Cadence type`: weekly fresh, periodic fresh, bulk cycle, stock-based, seasonal, or trial.
+- `Consumption per week`: amount or units when known.
+- `Package size`: amount supplied by one unit.
+- `Target stock`: desired amount immediately after replenishment.
+- `Reorder point`: amount or remaining coverage that triggers action.
+- `Current stock`: most recently confirmed quantity; leave unknown rather than inventing it.
+- `Last purchase date` and `last purchase quantity`.
+- `Estimated run-out date`: derived only when consumption and stock or purchase quantity are sufficiently known.
+- `Next check date`: when the item should reappear for a quick stock confirmation.
+- `Substitutes`: approved alternatives in priority order.
+- `Maximum unit price`: optional price guardrail.
+- `Confidence`: confirmed, inferred from history, or proposed.
+- `Notes`: freshness, shelf-life, selection, or preparation constraints.
+
+## Replenishment logic
+
+Use three output states:
+
+1. `Buy now`: fresh cadence is due, confirmed stock is at or below the reorder point, or estimated coverage is shorter than the delivery lead time plus safety buffer.
+2. `Check stock`: the estimate says the item may be approaching its threshold, but current stock is not confirmed.
+3. `Not due`: confirmed or estimated coverage extends beyond the next check date.
+
+Do not treat time since purchase alone as proof that a durable item is empty. For pantry, freezer, supplements, and other long-cycle goods, time should trigger a stock check first. A one-tap answer such as `enough`, `low`, or `out` is sufficient; exact counting is optional unless the purchase is large.
+
+Do not classify or schedule an item until its product form is known. The same base food may require separate rows—for example fresh mushrooms, frozen mushrooms, and jarred mushrooms—because storage, shelf life, preparation, and replenishment cadence differ.
+
+For short-lived foods, cadence can create a provisional recommendation even without a live count. Phrase it as “probably due” until Arthur confirms that he still consumes the item and needs it this cycle.
+
+## Practical rhythm
+
+- Seven-day order: generate `Buy now` and `Check stock` only for short-lived fresh foods such as bananas, tomatoes, cucumbers, and other items assigned to the weekly cycle.
+- Fourteen-day order: handle longer-lasting refrigerated staples such as Skyr and kefir at their two-week target stocks.
+- Four-to-eight-week bulk order: review and replenish durable refrigerated, frozen, and pantry reserves such as kimchi, nuts, oats, coffee, and other explicitly assigned stock items.
+- At each supplier's longer horizon: check only the relevant special bulk items, such as milk, protein powder, creatine, freeze-dried egg, and supplements.
+- During the initial classification pass, review the broad food pool to assign every wanted item to one of these rhythms. Once classified, do not repeat the full catalogue for every order; show only the items belonging to the cycle that is currently due, plus any exceptional low-stock alert.
+- After every completed order: update purchase date and quantity. If practical, update current stock; otherwise schedule the next check from the known consumption rate.
+
+## Saturday task schedule
+
+Google Tasks in the `❤️‍🩹🥗Health` list operationalize the three main cycles. The current one-year schedule starts on Saturday, 26 September 2026, at 09:00:
+
+- every Saturday: seven-day fresh order;
+- every second Saturday: fourteen-day refrigerated order;
+- every fourth Saturday: twenty-eight-day stock order.
+
+When cycles coincide, keep the tasks separate so that each can be checked off independently. Each task description contains a compact offline-friendly starting list plus a link to this file as the evolving source of truth. The embedded list is intentionally marked as provisional because this initial classification pass is still in progress and current stock, prices, availability, and delivered condition must still be checked. Holiday-specific shifts are deferred until explicitly added; the current recurring tasks remain on Saturdays.
+
+## Initial cadence classification
+
+This is a draft derived from purchase history and stated routines. It is not a finalized order.
+
+| Food or group | Initial cadence | Current rule | Confidence |
+| --- | --- | --- | --- |
+| Skyr or similar Fage-style natural yogurt, 500 g refrigerated unit | refrigerated two-week cycle | Consume one 500 g unit/day across this interchangeable category; about two portions per two-week cycle are bought during Munich commute days, leaving a home target of about twelve units; check printed best-before dates | confirmed |
+| Fresh broccoli, one head | weekly fresh | Buy at most one per weekly order because a second head may spoil; use frozen vegetables for remaining coverage | confirmed |
+| Fresh bananas | weekly fresh | Current starting rhythm is one/day and seven per weekly order; store outside the refrigerator and away from apples, preferably with mixed or slightly green ripeness | confirmed starting rhythm |
+| Fresh kiwi | weekly fresh | Current starting quantity is four per weekly order; adjust after reviewing the total fruit basket | confirmed starting quantity |
+| Fresh pears | weekly fresh | For the current Monday order, buy one ordinary multipack; approximately four to six pears are acceptable depending on the retailer's available pack size, with no need to force an exact count | confirmed current-order choice |
+| Fresh watermelon | weekly fresh | Current stock is zero, so add one unit to the current weekly order. Prefer one small whole watermelon sized for one person, or a small pre-cut segment such as a quarter or half that can realistically be finished promptly. Do not buy a large whole melon. Whole intact watermelon can sometimes keep about one to two weeks under suitable conditions, but Arthur has only room-temperature storage or a 4 degrees C refrigerator; prolonged 4 degrees C storage can cause chilling damage, and delivery ripeness is uncertain. Therefore keep the default at one weekly unit. A two-week trial may use two intact mini watermelons, with the unopened second one at room temperature, but never two pre-cut portions. Once cut, cover and refrigerate, then consume promptly; German BZfE guidance conservatively says within one day | confirmed current stock, current-order quantity, preference, product form, cadence, and storage constraint |
+| Honeydew and other yellow melons | paused | Do not buy after a spoiled interior in the recent trial; watermelon is the accepted melon format until Arthur explicitly reopens this category | confirmed pause |
+| Fresh avocados | fourteen-day fresh cycle | Current stock is zero and consumption is approximately one avocado per week. Buy two for the current two-week cycle; Arthur's experience is that they keep well refrigerated. Allow firm fruit to ripen before chilling when necessary | confirmed consumption, current stock, and current-order quantity |
+| Fresh lemons | fourteen-day refrigerated cycle | After today's remaining half lemon is consumed, current stock is zero. Consumption is approximately two to three lemons/week. Arthur stores lemons in his approximately 4 degrees C refrigerator and has no intermediate 10–15 degrees C storage area, so planning must use his actual setup rather than idealized guidance. Buy five lemons, or six when that is the practical pack size, for approximately two weeks of coverage | confirmed consumption, actual storage method, and corrected two-week cycle |
+| Fresh mini cucumbers | weekly fresh | Current stock is zero and the starting consumption target is one mini cucumber per day. Buy approximately seven, or the nearest ordinary pack quantity, for one week rather than stocking two weeks; follow the package instructions and avoid an excessively cold refrigerator zone because cucumbers are cold-sensitive | confirmed starting rhythm |
+| Fresh cherry tomatoes | weekly fresh | Current stock is zero and the starting target is about four tomatoes per day. Buy one approximately 500 g pack for the week; store airy and shaded outside the refrigerator when practical, because tomatoes are cold-sensitive | confirmed starting rhythm |
+| Fresh red peppers | weekly fresh | Current stock is zero and the starting target is about half a pepper per day. Buy one three-pack, covering approximately six days | confirmed starting rhythm |
+| Cooked vacuum-packed beetroot, refrigerated 500 g pack | four-week stock cycle, excluded from the fresh weekly list | Arthur's usual product is pre-cooked and vacuum-packed, not fresh beetroot. Consumption is one 500 g pack every one to two weeks. Current stock is only two individual beets remaining from one opened five-beet pack, expected to be consumed today or tomorrow; projected stock at delivery is zero packs. Buy four new 500 g packs, two kilograms total, for the current four-week cycle. If consumption is slower, remaining packs roll into the next cycle and reduce that cycle's purchase. Published comparable products specify at least three months and up to six months unopened; the exact REWE Beste Wahl production shelf life is not published online, so every delivered pack's printed best-before date must cover the intended window. After opening, Arthur freezes the contents and consumes them within one week | confirmed product form, consumption range, corrected current stock, target, and post-opening routine |
+| Fresh grapes, 500 g pack | weekly fresh delivery trial | Order one pack only when price is below EUR 3.00; inspect immediately for mold and spoilage, and continue delivery only if quality proves reliable; if only more expensive packs exist, omit without substitution; repeated poor quality moves grapes to in-person selection | confirmed trial and price ceiling |
+| Fresh apples | paused | Do not buy while the systematic local quality problem persists across REWE crates and varieties; resume only after Arthur explicitly decides the local supply has improved | confirmed pause |
+| Fresh blueberries, refrigerated | weekly fresh | When selected, consumption is about 100 g/day. Count the quantity against the shared 500 g/week cap for all fresh berries combined; prefer the best unit price only among pack sizes that keep the whole fresh-berry basket within that cap. Inspect on arrival, remove damaged berries, keep dry and ventilated, and wash portions only before eating. Blueberries were not the berry that previously spoiled quickly | confirmed consumption and correction; delivery quality under test |
+| Fresh raspberries, refrigerated | optional immediate-use fresh | These spoiled quickly in Arthur's experience; buy only a small quantity intended for the next few days rather than as a weekly reserve | confirmed quality constraint |
+| Strawberries and other fresh berries | optional weekly fresh | Surface as optional and allow omission based on price, quality, and short shelf life | inferred |
+| All fresh berries combined | weekly fresh cap | Blueberries, raspberries, strawberries, and every other fresh berry variety together must total no more than 500 g per week; cover additional berry demand with frozen berries | confirmed hard cap |
+| Frozen strawberries, 500 g pack | monthly freezer bulk cycle | Target two packs, 1 kg, as one component of the monthly 100 g/day frozen red-fruit rotation. Frozen berries do not count against the fresh-berry cap | confirmed cadence, package size, and target |
+| Frozen raspberries, 500 g pack | monthly freezer bulk cycle | Target two packs, 1 kg, as one component of the monthly 100 g/day frozen red-fruit rotation. Frozen berries do not count against the fresh-berry cap | confirmed cadence, package size, and target |
+| Frozen blueberries, 500 g pack | monthly freezer backup stock | Keep one pack, 500 g, as approximately five emergency portions when the weekly fresh blueberry order is missed, unavailable, spoiled, or arrives in poor condition. Do not consume it as part of the ordinary red-fruit rotation while the fresh supply is working | confirmed cadence, package size, and backup target |
+| Frozen REWE Beste Wahl pomegranate seeds, 300 g pack | monthly freezer bulk cycle and routine trial | Target four packs, 1.2 kg, as one component of the monthly 100 g/day frozen red-fruit rotation. Together with two 500 g strawberry packs and two 500 g raspberry packs, the rotation stock totals 3.2 kg, or about 32 daily 100 g portions. One current pack contains two separate 150 g inner bags; factory portioning is a strong low-friction advantage. Move one sealed inner bag directly from freezer to refrigerator rather than weighing daily. At -18 degrees C, keep unopened frozen fruit through the printed best-before date; general frozen-fruit planning can use roughly eight to twelve months when continuously frozen | confirmed package form, cadence, target, and friction |
+| Fresh carrots | refrigerated two-week trial cycle | Consumption about 1 kg/week; when stock is zero, order 2 kg and verify the second kilogram's condition after one week in the refrigerator fresh zone | confirmed consumption; storage cycle under test |
+| Mini cucumbers, cherry tomatoes, peppers | weekly fresh | Surface weekly as a choice set of commonly used fresh vegetables | inferred from history |
+| Mushrooms, especially jarred champignons or chanterelles | stock-based pantry with after-opening freezer portions | Current stock is sufficient across several unopened jars; buy none in the current order. These are normally bought in long-life jars; check pantry stock rather than surfacing weekly as fresh food. A roughly 500 g jar is too large for Arthur's approximately 50 g use portions once opened. On opening day, follow the package instruction, drain the mushrooms well, and freeze the unused mushrooms promptly in separate approximately 50 g freezer-safe portions with as much air removed as practical. Do not freeze the original commercial glass jar or repeatedly thaw and refreeze one bulk portion. Two weeks of frozen use is comfortably within normal quality guidance; expect a somewhat softer or wetter texture after thawing. A portion may be thawed in the refrigerator and used within two to three days, or heated directly from frozen when the final preparation method safely allows it | confirmed sufficient current stock, current-order omission, product form, portion size, and after-opening solution |
+| Complete Organics Mild or Original Kimchi, 240 g refrigerated jar | refrigerated bulk cycle, excluded from weekly ordering | Consumption is approximately two jars/week. Target approximately eight weeks of coverage: sixteen jars total. Current confirmed stock is one jar; the current Flink order calls for fifteen additional jars when refrigerator capacity permits and delivered dates extend safely beyond consumption. After replenishment, do not surface kimchi in the regular weekly list; schedule a stock check near six weeks or when estimated remaining stock approaches four jars, then replenish again as a separate bulk-cycle decision. The current jar is marked best before 14 March 2027. Flink was the preferred source on 20 September 2026 at EUR 4.79 per 240 g jar, cheaper than the direct manufacturer's available set prices on a normalized basis. Re-check current price, availability, quantity limits, fees, and best-before dates. Keep continuously below 8 degrees C; after opening keep the vegetables under brine and use within about four weeks | confirmed consumption, target, current stock, cadence, current-jar date, and current price comparison |
+| Sauerkraut | paused, replaced by kimchi | Arthur originally used sauerkraut for expected live fermented cultures. Ordinary REWE sauerkraut did not reliably provide the live-culture property he wanted, and prior research did not identify a convenient dependable German source for a suitable alternative. Kimchi now fully replaces this category. Do not buy or surface sauerkraut unless Arthur explicitly reactivates it | confirmed pause, rationale, and replacement |
+| Kefir, refrigerated 500 g container | refrigerated two-week cycle | Consumption is approximately one-third to one-half container per day, or about two to three containers/week. Current stock is one container marked best before 3 October 2026; add five containers in the current order, giving six total and approximately two weeks of coverage. Check delivered best-before dates | confirmed consumption, current stock, current date, and current-order quantity |
+| Other yogurt | periodic refrigerated | Surface during the weekly review only when the previous container is likely used or the refrigerator count is low | confirmed recurring food |
+| Magerquark and other plain quark | paused, excluded from recurring orders | Quark and Skyr are mutually exclusive alternatives rather than additive daily foods. Arthur currently chooses Skyr and has removed Magerquark from the regular rotation because of its salt content. Do not surface or substitute quark unless Arthur explicitly reactivates it | confirmed pause and category relationship |
+| Fresh eggs, 10-pack | conditional fourteen-day refrigerated cycle and one-pack Flink delivery trial | Eggs belong to the two-week review, not the weekly order. Historical consumption was about four eggs/day, roughly five 10-packs per two weeks; five packs fit in the refrigerator. That historical target predates freeze-dried egg, so every two-week review must decide the split between fresh eggs and powder from remaining powder stock, observed tolerance, and delivery reliability. For the current order, add exactly one trial pack and inspect immediately for broken shells and transport damage. If it arrives intact, delivered eggs remain possible; if damaged, stop delivery orders and consider only in-person purchase | confirmed historical consumption, storage capacity, cadence, current trial, and decision rule |
+| Freeze-dried egg | conditional fourteen-day review within long-cycle stock and tolerability observation | Current confirmed stock is 1 kg. At a rough use rate of 50 g/day, that alone represents about 20 consumption days, though use is not perfectly daily. At each two-week review, reassess remaining grams and decide the fresh-egg/powder mix. Arthur has an unconfirmed impression that he may feel less well after consuming it or digest it less easily. Do not label this as an intolerance or causal effect: other causes, including current illness, remain possible. Track future exposures and symptoms before changing the long-term egg strategy | confirmed current stock, proposed consumption rate, review cadence, and uncertainty |
+| Proven frozen chicken products, typically 400 g packs | monthly freezer bulk cycle with temporary weekly availability check | Current stock is two packs, approximately 800 g or four days at the present portion target. Frozen chicken, suitable salmon, and prawns ideally form a monthly stock, but the current availability failure requires a temporary weekly recheck until the preferred items return. Do not order each category independently as if each must cover the whole month. The previously used pre-cooked frozen chicken product was unavailable in Flink on 19 and 20 September 2026; do not infer permanent delisting yet, but do not rely on it for the current order. Buy only microwave-compatible pre-cooked formats; an optional in-person REWE restock is not reliable enough to be the sole fallback | confirmed current stock, monthly goal, temporary check cadence, availability problem, and constraint |
+| Suitable frozen salmon | monthly freezer bulk cycle with temporary weekly availability check and price ceiling | Frozen salmon is a proven SNIPS format and ideally contributes to the shared monthly frozen-protein stock, but the current availability failure requires a temporary weekly recheck until an affordable product returns. The usual `ja!` or REWE Bio products were unavailable in the current Flink catalogue. Preferred price is around EUR 20–25/kg and the hard ceiling is approximately EUR 30/kg; reject products around EUR 50/kg rather than silently paying double. Do not rely on a possible later in-person purchase as the only protein plan | confirmed preparation format, monthly goal, temporary check cadence, availability issue, and price rule |
+| REWE Beste Wahl White Tiger prawns without shell, frozen 450 g | monthly freezer fallback trial | For the current order, buy one three-pack offer: three 450 g packs, 1.35 kg total, because it saves 10%. Arthur will divide each pack into two 225 g day-portions, so the offer covers six days. With the current two 400 g chicken packs covering four days, current frozen stock covers ten days; four of the seven stocked tuna tins may bridge the remaining four days of the next two weeks. Do not expand to a full-month prawn purchase while the preparation routine remains untested and preferred chicken and salmon are unavailable. Product is blanched, peeled, deveined, individually removable, and frozen; the package instructs full thawing before cooking. SNIPS officially supports shrimp in the 4 L two-tray microwave steamer at 600 W, so the method is compatible, but Arthur's exact routine is not yet personally proven. First trial: thaw one 225 g portion in the refrigerator, use 400 ml cold water, arrange prawns in one layer, start conservatively at 600 W, and verify every piece is pearly or white and opaque throughout; extend in short increments if any center remains translucent or cold. Record the successful time. Respect the general animal-protein price preference of about EUR 20–25/kg and hard ceiling near EUR 30/kg | confirmed current purchase, six-day coverage, temporary two-week bridge, salt constraint, and fallback rule; personal preparation routine proposed, not yet proven |
+| Frozen broccoli, cauliflower, spinach, Brussels sprouts, kale or similar vegetables | freezer stock | Target about 300 g total vegetables/day across the rotation; check aggregate freezer grams and favor variety when one type is already well stocked | confirmed |
+| Protein UHT milk / Schwarzwaldmilch | bulk cycle | Approximately 2 L per week; Flaschenpost purchase intended to cover about one month | confirmed rhythm |
+| Oats, 500 g packs | four-week pantry cycle | Consumption is 50–60 g/day. Current stock is three packs, 1.5 kg total, covering approximately 25–30 days. Buy none in the current order; in the next four-week cycle buy three new 500 g packs, again providing roughly one cycle of coverage. This corrects the earlier 80 g/day estimate | confirmed corrected consumption, current stock, current-order omission, and next-cycle quantity |
+| Natural nut mix, 200 g pack | four-to-eight-week bulk cycle, excluded from weekly and fourteen-day ordering | Consumption is approximately 50 g/day. Current stock is approximately 400 g. For the current bulk replenishment, buy at least seven new 200 g packs (1,400 g); together with current stock this gives about 1,800 g, or roughly 36 days of coverage. Surface only at the bulk-stock check or on an exceptional low-stock alert | confirmed consumption, package size, current stock, and minimum current-order quantity |
+| Flaxseed | approximately eight-week pantry cycle | Current stock is zero; add exactly one pack to the current order. A pack appears to last roughly two months, so do not add it automatically to every four-week order. Recheck at the eight-week horizon or when the opened pack is nearly empty; refine consumption and package-size data after this purchase | confirmed current stock, current-order quantity, and approximate cadence |
+| Chia seeds | four-week pantry review | Current stock is approximately 200 g and consumption is about 6–8 g/day, giving roughly 25–33 days of coverage. Buy none in the current order; surface chia in the next four-week bulk cycle for replenishment. After the next package size is known, set a stable target stock and reorder point | confirmed current stock, consumption, current-order omission, and next-cycle need |
+| Hulled hemp seeds | excluded for price | Do not buy or substitute automatically; Arthur removed this proposed trial because it is too expensive for the perceived benefit. Reconsider only if he explicitly reactivates it or the price changes materially | confirmed exclusion and rationale |
+| Ground coffee, typically 500 g pack | four-week pantry review | Current stock is approximately 750 g, or one and a half packs. Consumption is now about 15 g/day, reduced from the earlier roughly 30–35 g/day because that amount was too strong. Current stock covers about 50 days. Buy none now; at the next four-week cycle, about 330 g or 22 days should remain, so buy one new 500 g pack then to avoid running out before the following cycle | confirmed corrected consumption, current stock, current-order omission, and next-cycle quantity |
+| Rice cakes | stock-based | Consumption roughly one to two packs/week; check during bulk review | confirmed rhythm |
+| Ready-to-eat beans, lentils, and chickpeas in tins, jars, or pouches | monthly pantry bulk cycle | Current confirmed stock is seven units. Consumption is approximately four to five units/week, so current coverage is only about ten to fourteen days. Add fourteen units in the current order, reaching 21 total and approximately four to five weeks of coverage. Maintain a mixed rotation while favoring beans and lentils over chickpeas; exact varieties can follow availability and price unless Arthur specifies a mix | confirmed current stock, consumption, current-order quantity, cadence, and preference |
+| Fish tins | stock-based pantry reserve | Current confirmed stock is seven tuna tins, so no immediate reorder is needed. In the present availability gap, up to four tins may substitute for the four uncovered days after six days of prawns and four days of chicken, completing approximately two weeks of animal-protein coverage. Outside this temporary bridge, tuna may also be eaten in addition to a frozen portion; do not permanently subtract it from the ideal monthly freezer target without confirming the intended role for that cycle. Historical fish-tin rhythm is roughly two to three/week, favoring mackerel and sardines | confirmed current tuna stock, temporary bridge role, and flexible relationship to frozen protein |
+| Protein powder | long-cycle stock | Several kilograms from Myprotein; check around the estimated three-to-four-month horizon | confirmed stock, estimated horizon |
+| Creatine | annual stock | Approximately one year of ProFuel supply; do not surface in weekly lists | confirmed stock |
+| Magnesium, L-theanine, omega-3 | long-cycle stock | Sunday Natural; depletion rate still needs confirmation | confirmed supplier, unknown cadence |
+| Olive oil and spices | stock-based | Ask only when estimated low; never place automatically every cycle | confirmed pantry items |
+| Dark chocolate | capped stock | Maximum one pack at home | confirmed rule |
+
+## Minimal weekly interaction
+
+The weekly workflow should ask Arthur only about ambiguous or stock-based items, for example:
+
+- “Fresh list is probably due: Skyr, broccoli, fruit choice, cucumbers/tomatoes and mushrooms. Keep all, remove some, or change quantities?”
+- “Freezer check: enough proven chicken and salmon for seven days?”
+- “No bulk products are due this week.”
+
+After those answers, prepare the retailer-specific carts and present substitutions, changed prices, fees, and delivery times for final approval.
+
+## Weekly memory checklist
+
+Use this checklist to prevent forgotten categories. It is a review pool, not a command to buy every item.
+
+- Fruit core/choice set: bananas, kiwi and grapes. Apples are currently paused because of repeated hidden defects.
+- Optional fruit rotation seen in history: blueberries, strawberries, pomegranate seeds, melon, lemons, avocado.
+- Fresh vegetable core/choice set: broccoli, carrots, mini cucumbers, cherry tomatoes and peppers.
+- Additional vegetable rotation: cauliflower, spinach, beetroot and other currently desired vegetables; distinguish fresh from frozen formats.
+- Refrigerated dairy: Skyr, kefir, yogurt, quark and any currently used milk that is not already covered by the bulk reserve.
+- Fermented foods: kimchi and sauerkraut.
+- Protein/freezer check: proven frozen chicken formats and suitable frozen salmon.
+- Eggs: check whether the freeze-dried reserve currently replaces fresh eggs.
+- Pantry rotation: jarred mushrooms, ready-to-eat beans, lentils, cooked potatoes, microwave rice and rice cakes only when pantry stock is low.
+
+At review time, show categories and their likely-due items so Arthur can notice omissions. Do not flatten the entire pool into one oversized weekly order. Record removals such as “not this week” without treating them as permanent dislikes.
+
+For fruit, plan a total fruit volume first and distribute it across currently accepted options. When one fruit is paused or unavailable, reallocate its share instead of lowering the total automatically.
