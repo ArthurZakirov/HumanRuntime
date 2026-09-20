@@ -45,7 +45,7 @@ These are current stock and replenishment signals, not fully specified recurring
 
 - Flaschenpost: a bulk purchase of Schwarzwaldmilch covering roughly one month; likely recurring supplier for that milk.
 - Bugs Trait: 1 kg of freeze-dried egg preordered, creating a shelf-stable egg reserve.
-- Myprotein: several kilograms of protein powder in stock; expected replenishment horizon is roughly three to four months, subject to actual consumption.
+- Myprotein: approximately 5 kg of protein powder were recently replenished. At about 50 g/day this is roughly 100 days of coverage. Do not schedule a calendar reminder; Arthur will initiate the next order when the visible cupboard stock becomes low.
 - Sunday Natural: magnesium, L-theanine, and omega-3 products in use.
 - Amazon / ProFuel: approximately one year of creatine reserve purchased.
 - REWE in person: recurring fallback for ordinary raw carrots, suitable frozen chicken breast, affordable salmon when stocked, ready-to-eat cooked potatoes, beef bone broth, apple-cider vinegar, and other important products unavailable or unsuitable at Flink.
