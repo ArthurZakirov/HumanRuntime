@@ -51,8 +51,8 @@ Quantities describe prior planning and should be reconciled with current invento
 
 ## Fats, seeds, seasonings, and pantry
 
-- Natural nut mix is an acceptable default; walnuts and occasional macadamias have also been purchased.
-- Almonds, pumpkin seeds, and sunflower seeds remain optional possibilities, but Flink availability is unreliable or absent. Check them only during a combined REWE/dm trip when Arthur has explicitly confirmed a current need.
+- Natural nut mix is the only currently active nut format. All separate single-variety nuts—including almonds, walnuts, macadamias, hazelnuts, and cashews—are paused and must not replace an unavailable mix automatically.
+- Pumpkin seeds and sunflower seeds remain separate optional possibilities, but Flink availability is unreliable or absent. Check them only during a combined REWE/dm trip when Arthur has explicitly confirmed a current need.
 - Chia is a four-week pantry review item: approximately 200 g remain, consumption is about 6–8 g/day, and no purchase is needed until the next monthly cycle. Flaxseed is an approximately eight-week pantry item; current stock is empty and one pack belongs in the current order. Hulled hemp seed is paused because its price does not justify the benefit for Arthur; retain it for possible future reactivation.
 - Extra-virgin olive oil is a staple.
 - Beef bone broth and apple-cider vinegar are REWE-only pantry options and unavailable at Flink. Their quantities and cadence remain conditional until confirmed.

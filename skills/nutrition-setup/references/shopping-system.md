@@ -60,7 +60,7 @@ Track supplier, current reserve, expected depletion, and reorder rule separately
 The September 2026 basket contained 44 product lines and is evidence of preferences, not a weekly template. Representative groups:
 
 - Frozen vegetables: cauliflower, Scandinavian vegetable mix, creamed mixed vegetables, spinach.
-- Nuts: natural mixed nuts, walnuts, macadamias.
+- Nuts: buy only the natural mixed-nut product while individual nut varieties remain paused.
 - Fruit: blueberries, grapes, bananas, strawberries, pomegranate, red pepper, avocado, melon, lemons.
 - Dairy: Fage yogurt and Andechser kefir.
 - Protein: seven packs of pre-cooked frozen chicken fillet steaks, salmon portions, tuna.

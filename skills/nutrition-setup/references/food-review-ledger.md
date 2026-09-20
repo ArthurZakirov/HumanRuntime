@@ -54,10 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| NUT-001 | Walnuts | nuts and seeds | exact Flink receipt `ja! Walnüsse ganze Kerne 200g` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
-| NUT-002 | Macadamia nuts | nuts and seeds | exact Flink receipt `Kluth Macadamias geröstet & gesalzen` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
-| NUT-003 | Hazelnuts | nuts and seeds | confirmed Cronometer breakfast mix | unreviewed | grouped natural-nut-mix row | Need actual purchased form and supplier |
-| NUT-004 | Cashews | nuts and seeds | confirmed Cronometer breakfast mix | unreviewed | grouped natural-nut-mix row | Need actual purchased form and supplier |
 | VEG-010 | Champignons, cooked and jarred | frozen or preserved vegetables | mushroom routine and user correction | unreviewed | grouped jarred-mushroom row | Exact form needs its own source and package size |
 | VEG-011 | Chanterelles, cooked and jarred | frozen or preserved vegetables | food profile | unreviewed | grouped jarred-mushroom row | Exact form needs its own source and package size |
 | VEG-012 | Pickled cucumbers, jarred | frozen or preserved vegetables | historical REWE workbook-analysis conversation | unreviewed | none | Exact product, current status, supplier, and cadence need confirmation |
@@ -95,6 +91,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | GRN-001 and GRN-003 | Dry rice, including Basmati | resolved | paused; stovetop preparation does not fit the current low-friction system. Keep separate from paused microwave rice and never use either form as an automatic legume fallback | `Dry rice, including Basmati` | 2026-09-20 |
 | GRN-002 | Dry quinoa | resolved | paused; stovetop preparation does not fit the current low-friction system | `Dry quinoa` | 2026-09-20 |
 | LEG-DRY | Dry lentils and all other uncooked dried legumes | resolved | paused as a product-form category; do not buy or use them to fill the active ready-to-eat monthly legume target | `Dry lentils and other dried legumes` | 2026-09-20 |
+| NUT-001–004 plus almonds | Individual walnuts, macadamias, hazelnuts, cashews, and almonds | resolved | paused as one category; the natural nut mix is the only active nut format. Do not ask about or buy individual varieties unless Arthur explicitly reactivates them | `Individual nut varieties` | 2026-09-20 |
 
 ## Completion gate
 
