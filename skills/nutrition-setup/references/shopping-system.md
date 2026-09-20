@@ -64,7 +64,7 @@ These are current stock and replenishment signals, not fully specified recurring
 - Amazon / ProFuel: approximately one year of creatine reserve purchased.
 - REWE in person: recurring fallback for ordinary raw carrots, suitable frozen chicken breast, affordable salmon when stocked, ready-to-eat cooked potatoes, beef bone broth, apple-cider vinegar, and other important products unavailable or unsuitable at Flink.
 - dm: known source for buckwheat flakes; batch dm-only needs rather than searching Flink.
-- Complete Organics direct shop is a comparison source, not the default bulk supplier. On 20 September 2026, shipping within Germany was free from EUR 49; `Alle Fermente` cost EUR 47.99 for ten mixed jars and the six-jar `Kimchi Set` cost EUR 29.99. At the same time, Arthur's logged-in Flink shop offered both 240 g Mild and Original Complete Organics Kimchi for EUR 4.79 each. Therefore the manufacturer's advertised set discount did not beat Flink's per-jar price: the direct six-pack was about EUR 5.00 per jar and the ten-jar mixed set about EUR 4.80 per jar, with some mixed-set jars smaller than 240 g. Compare actual normalized end prices rather than discount percentages; when Flink is already used for the grocery order, allocate no extra delivery charge to kimchi unless adding it changes the order fee.
+- Complete Organics kimchi is no longer a bulk-supplier decision. The fixed limit is two 240 g jars per month total, preferably added to an ordinary Flink order when available. Do not create a separate direct-manufacturer order or use six- or ten-jar sets merely to obtain a nominal discount. Re-check the live unit price and fees before purchase.
 
 Track supplier, current reserve, expected depletion, and reorder rule separately from ordinary weekly groceries. Do not place these long-cycle products into every Wolt or Flink cart.
 
@@ -78,7 +78,7 @@ The September 2026 basket contained 44 product lines and is evidence of preferen
 - Dairy: Fage yogurt and Andechser kefir.
 - Protein: seven packs of pre-cooked frozen chicken fillet steaks, salmon portions, tuna.
 - Legumes: chickpeas, white beans, black beans, brown lentils.
-- Other recurring foods: kimchi, olive oil, oats, coffee, corn cakes, rice cakes, and lentil cakes. Jarred mushrooms and pumpernickel are currently paused and must not surface automatically.
+- Other recurring foods: kimchi at two jars per month, olive oil, oats, coffee, corn cakes, rice cakes, and lentil cakes. Jarred mushrooms and pumpernickel are currently paused and must not surface automatically.
 - Seasonal tea: from the next four-week autumn/winter order, one pack turmeric chai and one pack ginger-lemon tea; prefer Yogi Tea but accept a close equivalent when unavailable. Buy none in the current cycle because existing bags cover the month.
 
 ## Historical eight-week planning quantities

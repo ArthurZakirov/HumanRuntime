@@ -44,7 +44,8 @@ Review exactly one unresolved candidate at a time in this order:
 8. grains, starches, bread, and cakes;
 9. nuts, seeds, and oils;
 10. condiments, spices, and drinks;
-11. supplements and special bulk goods.
+11. supplements and special bulk goods;
+12. medications, which are always kept separate from food and grocery carts.
 
 After each answer, update the review state and operational mapping before presenting the next unresolved candidate. State progress as `candidate N of M in category` and never switch to a free-association suggestion list.
 
@@ -86,6 +87,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | DRK-001–002 | Turmeric chai and ginger-lemon tea, tea bags | resolved | active seasonal autumn/winter category. Current stock about ten and six bags respectively; buy none now. Starting next four-week cycle, buy one pack of each, preferably Yogi Tea or a close equivalent | `Yogi Tea turmeric chai and ginger-lemon tea` | 2026-09-20 |
 | SUP-001 | AG1 powder supplement | resolved | paused; do not track, schedule, or buy until Arthur explicitly reactivates it | `AG1 powder supplement` | 2026-09-20 |
 | SUP-002 | Vitamin D3 supplement | resolved | active manual stock item; a reserve is available, with no fixed cadence or automatic reminder. Arthur will report when stock is low, then the exact product and purchase details can be chosen | `Vitamin D3 supplement` | 2026-09-20 |
+| MED-001 | Symbioflor 1 medication | resolved | proposed medication trial for chronic recurrent sinusitis; keep separate from food and supplements, do not add to grocery orders, and do not purchase automatically. Exact product, quantity, price, start date, and evaluation plan require a separate approved pharmacy transaction | `Symbioflor 1` in the medications section | 2026-09-20 |
 
 ## Completion gate
 

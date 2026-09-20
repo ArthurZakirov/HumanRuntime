@@ -59,9 +59,6 @@ Quantities describe prior planning and should be reconciled with current invento
 - Beef bone broth and apple-cider vinegar are REWE-only pantry options and unavailable at Flink. Their quantities and cadence remain conditional until confirmed.
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
 - Preferred cold-season teas are Yogi Tea turmeric chai and ginger-lemon tea, or close equivalents. Current stock is about ten and six tea bags respectively, so buy none now; from the next four-week cycle, buy one pack of each per cycle while the autumn and winter routine remains active.
-- AG1 is a supplement and is currently paused; do not track or buy it.
-- Vitamin D3 is active and stocked, but has no fixed purchase cadence. Arthur monitors the reserve visually and will request replenishment when it runs low; do not create automatic reminders.
-
 ## Fruit, vegetables, and fermented foods
 
 - Vegetable target: approximately 200–300 g per day across broccoli, cauliflower, spinach, Brussels sprouts, kale, and similar vegetables rather than that amount of each item. Broccoli is the favorite and should represent roughly 50% or more, but the ratio is deliberately flexible.
@@ -76,7 +73,17 @@ Quantities describe prior planning and should be reconciled with current invento
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.
 - Kimchi and sauerkraut fit the established pattern; both original and mild kimchi have been purchased.
 - Sauerkraut is currently paused. It was originally chosen for expected live cultures, but ordinary supermarket products did not reliably meet that purpose; Kimchi now fully replaces it. Retain sauerkraut for possible future reactivation, but do not treat the two as additive fermented-food staples.
-- Complete Organics kimchi in 240 g refrigerated jars: current working consumption is approximately two jars per week.
+- Complete Organics kimchi in 240 g refrigerated jars: limit consumption and purchasing to two jars per month total. Kimchi is a low-frequency refrigerated add-on, not a bulk-stock product; do not create six-, eight-, ten-, or sixteen-jar orders.
+
+## Supplements
+
+- Protein powder is active and currently well stocked; use manual visual reorder rather than a fixed cadence.
+- Creatine, magnesium, L-theanine, omega-3, and Vitamin D3 are active supplements with existing reserves or long replenishment horizons. Do not put them into recurring grocery orders; surface them only when their specific stock rule says they are due.
+- AG1 is paused; do not track or buy it.
+
+## Medications
+
+- Symbioflor 1 is a proposed medication trial for chronic recurrent sinusitis, not a food or supplement. Keep it outside grocery carts and recurring food orders. It is not yet authorized for automatic purchase; before any pharmacy purchase, verify the exact product, current leaflet, price, and quantity and obtain Arthur's approval for that transaction.
 
 ## Preference and friction rules
 
