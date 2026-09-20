@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| PRO-001 | Raw chicken, fresh or non-pre-cooked frozen | meat and seafood | preparation-routines safety exclusion | unreviewed | none | Must remain distinct from proven pre-cooked frozen chicken; likely incompatible until a safe method is established |
 | LEG-001 | Black beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
 | LEG-002 | White beans, ready-to-eat | legumes | food profile and purchase history summary | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
 | LEG-003 | Brown or green lentils, ready-to-eat | legumes | food profile | unreviewed | grouped ready-to-eat-legume row | Split for supplier and quantity review |
@@ -99,6 +98,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-007 | Kale, frozen | resolved | paused; excluded from the current rotation and recurring shopping, retained for possible future reactivation | `Frozen kale` | 2026-09-20 |
 | VEG-008 | Kaiser vegetable mix, frozen | resolved | accepted existing stock; approximately 400 g currently present, but not part of the fixed recurring blocks | `Frozen broccoli, cauliflower, spinach, kale or similar active vegetables` | 2026-09-20 |
 | VEG-009 | Scandinavian vegetable mix, frozen | resolved | paused; historical Flink stopgap bought only because frozen broccoli was unavailable and the Flaschenpost broccoli source was not yet known; not a preferred product | `Frozen Scandinavian vegetable mix` | 2026-09-20 |
+| PRO-001 | Raw chicken and other raw meat, fresh or non-pre-cooked frozen | resolved | paused; excluded from current purchasing and preparation until Arthur explicitly reactivates a specific format with a safe proven method | `Raw or non-pre-cooked meat` | 2026-09-20 |
 
 ## Completion gate
 
