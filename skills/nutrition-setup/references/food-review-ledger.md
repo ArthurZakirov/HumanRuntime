@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| SUP-001 | AG1 powder | supplements and special bulk goods | confirmed Cronometer mapping | unreviewed | none | Need stock, supplier, cadence, and current active status |
 | SUP-002 | Vitamin D3 | supplements and special bulk goods | confirmed Cronometer mapping | unreviewed | none | Need exact current product, stock, cadence, and active status |
 
 ## Separate household-supplies candidate
@@ -86,6 +85,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | VEG-012 | Pickled cucumbers, jarred | resolved | paused; retain in the inventory but do not schedule or buy until Arthur explicitly reactivates it | `Pickled cucumbers, jarred` | 2026-09-20 |
 | SPI-001–005 | Garlic granules, curry, gyros seasoning, dill, and iodized salt | resolved | manual category; do not track, schedule, or ask about individual seasonings. Arthur adds the required product himself when it is visibly empty. Keep dried garlic granules conceptually separate from fresh garlic | `Seasonings and salt` | 2026-09-20 |
 | DRK-001–002 | Turmeric chai and ginger-lemon tea, tea bags | resolved | active seasonal autumn/winter category. Current stock about ten and six bags respectively; buy none now. Starting next four-week cycle, buy one pack of each, preferably Yogi Tea or a close equivalent | `Yogi Tea turmeric chai and ginger-lemon tea` | 2026-09-20 |
+| SUP-001 | AG1 powder supplement | resolved | paused; do not track, schedule, or buy until Arthur explicitly reactivates it | `AG1 powder supplement` | 2026-09-20 |
 
 ## Completion gate
 
