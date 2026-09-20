@@ -79,6 +79,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Bananas: current working rhythm is approximately one per day, purchased weekly rather than as a two-week fresh supply.
 - Whole onions: working use is roughly half an onion per day, sometimes one whole onion. Seven small red onions currently represent about two weeks of stock. Review at the four-week pantry cycle and buy only when the remaining sound onions will not cover the next cycle.
 - Whole garlic: use is only a few cloves per week and a pack can last roughly two months. Keep it as a manual visual-reorder item rather than a recurring task.
+- Whole sweet potatoes: consumption is approximately one per week. In each fourteen-day cycle, target two pieces and subtract remaining stock. Current stock is two, so buy none in the present cycle and expect two in the next cycle if those have been consumed.
 - Fresh blueberries: when selected, current consumption is approximately 100 g per day. Blueberries have not been the berry that spoiled quickly in Arthur's recent experience; that correction applies to raspberries.
 - Fresh raspberries: have spoiled quickly in Arthur's experience, so treat them as a short-lived optional item rather than stocking them for many days.
 - Fresh berries have one shared weekly cap: all fresh blueberry, raspberry, strawberry, and other berry varieties combined must total no more than 500 g. Any additional berry supply should be frozen rather than fresh.

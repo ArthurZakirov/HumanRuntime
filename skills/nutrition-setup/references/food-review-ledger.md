@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| VEG-003 | Sweet potato, fresh whole | fresh vegetables and aromatics | current user correction and proposed Sistema routine | unreviewed | none | Proposed preparation exists but current shopping status and tested method do not |
 | VEG-004 | Cauliflower, frozen | frozen or preserved vegetables | food profile and Flink-basket summary | unreviewed | grouped frozen-vegetable row | Split because availability may differ |
 | VEG-005 | Spinach, frozen | frozen or preserved vegetables | food profile and current stock discussion | unreviewed | grouped frozen-vegetable row | Split because availability and package form may differ |
 | VEG-006 | Brussels sprouts, frozen | frozen or preserved vegetables | food profile and current availability discussion | unreviewed | grouped frozen-vegetable row | Flink is often unavailable |
@@ -99,6 +98,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | FRU-002 | Pomegranate, fresh whole fruit | resolved | paused; frozen ready-to-use seeds are the active replacement | `Fresh whole pomegranate` | 2026-09-20 |
 | VEG-001 | Onion, fresh whole | resolved | active monthly stock check; current seven small red onions cover about two weeks at roughly half to one onion per day; buy one normal pack only when the remaining stock will not cover the next cycle | `Fresh whole onions` | 2026-09-20 |
 | VEG-002 | Garlic, fresh whole bulb or cloves | resolved | active manual-only long-life item; do not track or schedule; Arthur adds it himself when visibly low | `Fresh whole garlic` | 2026-09-20 |
+| VEG-003 | Sweet potato, fresh whole | resolved | active fourteen-day cycle with target stock of two; current stock is two, so buy none in the current cycle and expect two in the next cycle after subtracting remaining stock | `Fresh whole sweet potatoes` | 2026-09-20 |
 
 ## Completion gate
 
