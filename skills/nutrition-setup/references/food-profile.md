@@ -41,7 +41,7 @@ Quantities describe prior planning and should be reconciled with current invento
 
 - Prefer rotation rather than relying heavily on rice.
 - Bread, including pumpernickel and packaged whole-grain bread, is currently excluded because Arthur wants to remain bread-free. Do not surface it or substitute it for another carbohydrate unless he explicitly reactivates it.
-- Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, cooked packaged potatoes, buckwheat flakes, and a small amount of chickpeas. Microwave rice is no longer active because ready-to-eat lentils, beans, and chickpeas fully replace it.
+- Frequently discussed options: brown or green lentils, black beans, white beans, black/Beluga lentils, buckwheat flakes, and a small amount of chickpeas. Microwave rice is no longer active because ready-to-eat lentils, beans, and chickpeas fully replace it. Ready-to-eat cooked potatoes are also inactive because Flink does not offer a suitable delivered product.
 - Beans and lentils are preferred over chickpeas.
 - Ready-to-eat legumes are a monthly pantry purchase. Current consumption is approximately four to five tins, jars, or pouches per week; the working target is about 20 units after replenishment, with beans and lentils favored over chickpeas.
 - Dry grains that require stovetop cooking are poor defaults; ready-to-eat tins, jars, pouches, or flakes are better fits.
