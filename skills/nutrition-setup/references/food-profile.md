@@ -69,7 +69,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Price, availability, convenience, and consistency matter strongly.
 - Arthur wants food in usable condition and does not consider small refunds a good substitute for receiving the required food.
 - Historically, fruit, berries, grapes, broccoli, eggs, and raw meat or fish were treated as quality-sensitive because selection and transport condition matter. This is a preference signal, not an absolute ban on delivery. Do not include Arthur's normal jarred mushrooms in this fresh-food category.
-- Avoid keeping multiple packs of dark chocolate at home; the stated preference was a maximum of one pack.
+- Dark chocolate is excluded from Arthur's diet and recurring shopping. Do not surface or buy it unless he explicitly reactivates it; this replaces the earlier one-pack maximum.
 - Fresh apples are currently paused after a systematic local quality problem: Arthur inspected multiple REWE crates and varieties, observed recurring discoloration or texture changes around the stem area that predicted internal spoilage, and still discarded more than half of the least-bad selected apples; an office apple also had internal pest damage. Do not add apples to a cart unless Arthur explicitly restarts them after local supply quality changes.
 - Fruit consumption works as a shared volume across interchangeable fruits. Removing apples increases the required amount of bananas, kiwi, grapes, berries, or other accepted fruit rather than simply reducing total fruit intake.
 - Bananas: current working rhythm is approximately one per day, purchased weekly rather than as a two-week fresh supply.
