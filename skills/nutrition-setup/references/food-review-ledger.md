@@ -54,7 +54,6 @@ These candidates are already evidenced but not yet individually resolved in the 
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
-| GRN-002 | Dry quinoa | grains and starches | preparation-routines preference rule | unreviewed | none | Stovetop format is a poor fit |
 | NUT-001 | Walnuts | nuts and seeds | exact Flink receipt `ja! Walnüsse ganze Kerne 200g` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
 | NUT-002 | Macadamia nuts | nuts and seeds | exact Flink receipt `Kluth Macadamias geröstet & gesalzen` and food profile | unreviewed | grouped natural-nut-mix row | May differ from mix in price and cadence |
 | NUT-003 | Hazelnuts | nuts and seeds | confirmed Cronometer breakfast mix | unreviewed | grouped natural-nut-mix row | Need actual purchased form and supplier |
@@ -94,6 +93,8 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | PRO-001 | Raw chicken and other raw meat, fresh or non-pre-cooked frozen | resolved | paused; excluded from current purchasing and preparation until Arthur explicitly reactivates a specific format with a safe proven method | `Raw or non-pre-cooked meat` | 2026-09-20 |
 | LEG-001–005 | Ready-to-eat black beans, white beans, brown or green lentils, black or Beluga lentils, and chickpeas | resolved | one shared monthly legume category; do not ask about individual varieties. Current stock is seven units; add fourteen units now to reach about 21. Any canned, jarred, or pouched ready-to-eat legume may replace another unavailable one; priority is lentils, then beans of any type, then chickpeas. If none are available, leave the remaining quantity unfilled rather than substituting rice | `Ready-to-eat beans, lentils, and chickpeas in tins, jars, or pouches` | 2026-09-20 |
 | GRN-001 and GRN-003 | Dry rice, including Basmati | resolved | paused; stovetop preparation does not fit the current low-friction system. Keep separate from paused microwave rice and never use either form as an automatic legume fallback | `Dry rice, including Basmati` | 2026-09-20 |
+| GRN-002 | Dry quinoa | resolved | paused; stovetop preparation does not fit the current low-friction system | `Dry quinoa` | 2026-09-20 |
+| LEG-DRY | Dry lentils and all other uncooked dried legumes | resolved | paused as a product-form category; do not buy or use them to fill the active ready-to-eat monthly legume target | `Dry lentils and other dried legumes` | 2026-09-20 |
 
 ## Completion gate
 

@@ -34,7 +34,7 @@ On a first run, check the food during cooking, verify the coldest piece is safel
 
 - Favor one-start or low-intervention microwave workflows.
 - Pre-cooked frozen protein, frozen vegetables, ready-to-eat legumes, microwave rice, cooked packaged potatoes, and flakes are especially compatible with the routine.
-- Arthur prefers not to cook dry quinoa, rice, or similar grains on the stove. Ready-to-eat, canned, microwaveable, or flaked formats are preferred.
+- Arthur does not currently cook dry quinoa, rice, lentils, or other dried legumes. These product forms are paused; ready-to-eat tins, jars, pouches, microwaveable formats, or flakes are preferred when their own inventory status is active.
 - Minimize cleanup and active preparation time. If two methods are similarly healthy and safe, prefer the one with fewer steps and less monitoring.
 
 ## Opened jarred-mushroom preservation

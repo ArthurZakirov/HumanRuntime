@@ -46,6 +46,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Buckwheat flakes are an optional experiment rather than a staple. They are available at dm, not Flink; mention them again in about one month and combine any purchase with an already planned REWE trip because dm is next to REWE. Do not give them a fixed recurring schedule.
 - Ready-to-eat legumes are a monthly pantry purchase. Current consumption is approximately four to five tins, jars, or pouches per week; the working target is about 20 units after replenishment. The total quantity matters more than the variety: any canned, jarred, or pouched ready-to-eat legume may replace another unavailable one. Preference order is lentils, then beans of any color or type, then chickpeas. If none are available, leave the remaining quantity unfilled rather than substituting rice.
 - Dry rice, including Basmati, is paused because stovetop preparation does not fit the current low-friction system. Microwave rice is separately paused as well. Neither form may be used as an automatic legume fallback.
+- Dry quinoa and all uncooked dried legumes, including dry lentils, are paused for the same preparation-friction reason. The active legume category contains only ready-to-eat tins, jars, or pouches.
 - Dry grains that require stovetop cooking are poor defaults; ready-to-eat tins, jars, pouches, or flakes are better fits.
 
 ## Fats, seeds, seasonings, and pantry
