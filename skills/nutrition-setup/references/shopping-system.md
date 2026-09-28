@@ -64,7 +64,7 @@ These are current stock and replenishment signals, not fully specified recurring
 - Amazon / ProFuel: approximately one year of creatine reserve purchased.
 - REWE in person: recurring fallback for ordinary raw carrots, suitable frozen chicken breast, affordable salmon when stocked, ready-to-eat cooked potatoes, beef bone broth, apple-cider vinegar, and other important products unavailable or unsuitable at Flink.
 - dm: known source for buckwheat flakes; batch dm-only needs rather than searching Flink.
-- Complete Organics kimchi is no longer a bulk-supplier decision. The fixed limit is two 240 g jars per month total, preferably added to an ordinary Flink order when available. Do not create a separate direct-manufacturer order or use six- or ten-jar sets merely to obtain a nominal discount. Re-check the live unit price and fees before purchase.
+- Purchased kimchi is paused. One jar remains as of the 28 September 2026 visual stock report; buy no further jars from Flink or the manufacturer. Arthur plans to evaluate homemade fermentation separately, but that experiment does not create a grocery cadence until a safe, repeatable routine and quantity have been confirmed.
 
 Track supplier, current reserve, expected depletion, and reorder rule separately from ordinary weekly groceries. Do not place these long-cycle products into every Wolt or Flink cart.
 

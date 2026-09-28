@@ -59,6 +59,7 @@ Quantities describe prior planning and should be reconciled with current invento
 - Beef bone broth and apple-cider vinegar are REWE-only pantry options and unavailable at Flink. Their quantities and cadence remain conditional until confirmed.
 - Common seasonings include ground turmeric, cumin, caraway, garlic granules, gyros seasoning, curry, dill, black pepper, and iodized salt.
 - Preferred cold-season teas are Yogi Tea turmeric chai and ginger-lemon tea, or close equivalents. Current stock is about ten and six tea bags respectively, so buy none now; from the next four-week cycle, buy one pack of each per cycle while the autumn and winter routine remains active.
+
 ## Fruit, vegetables, and fermented foods
 
 - Vegetable target: approximately 200–300 g per day across broccoli, cauliflower, spinach, Brussels sprouts, kale, and similar vegetables rather than that amount of each item. Broccoli is the favorite and should represent roughly 50% or more, but the ratio is deliberately flexible.
@@ -71,9 +72,8 @@ Quantities describe prior planning and should be reconciled with current invento
 - Raw and non-pre-cooked meat is paused across the current diet and shopping rotation. Do not substitute it for proven prepared formats unless Arthur explicitly reactivates a specific product with an appropriate safe preparation method.
 - Fresh carrots: approximately 1 kg per week.
 - Recurrent or observed foods include broccoli, cauliflower, spinach, jarred mushrooms, red pepper, cooked vacuum-packed beetroot, cucumbers, tomatoes, blueberries, strawberries, kiwi, grapes, bananas, apples, lemons, avocado, pomegranate seeds, and melon. Arthur's usual beetroot is not fresh raw beetroot.
-- Kimchi and sauerkraut fit the established pattern; both original and mild kimchi have been purchased.
-- Sauerkraut is currently paused. It was originally chosen for expected live cultures, but ordinary supermarket products did not reliably meet that purpose; Kimchi now fully replaces it. Retain sauerkraut for possible future reactivation, but do not treat the two as additive fermented-food staples.
-- Complete Organics kimchi in 240 g refrigerated jars: limit consumption and purchasing to two jars per month total. Kimchi is a low-frequency refrigerated add-on, not a bulk-stock product; do not create six-, eight-, ten-, or sixteen-jar orders.
+- Purchased kimchi and sauerkraut are paused. Arthur has one purchased kimchi jar remaining and intends to explore making fermented vegetables himself instead of buying more. Homemade fermentation is only a future experiment until a safe, repeatable preparation and storage routine has been established; do not infer a recurring homemade quantity yet.
+- Sauerkraut remains documented for possible future reactivation, but do not treat it as an additive fermented-food staple or buy it automatically.
 
 ## Supplements
 
