@@ -2,7 +2,11 @@
 
 These are historically discussed or personally tested workflows, not universal cooking instructions. Re-check food condition, package directions, and safe internal temperature when products change.
 
-## SNIPS: broccoli and pre-cooked frozen chicken steaks
+## 🧭 Preparation route
+
+For everyday cooking, consult the [SNIPS routine](#-snips-broccoli-and-pre-cooked-frozen-chicken-steaks); for storage/handling, use [jarred mushrooms](#-opened-jarred-mushroom-preservation) and [frozen fruit](#-frozen-fruit-thawing-habit).
+
+## 🥦 SNIPS: broccoli and pre-cooked frozen chicken steaks
 
 Equipment: approximately 4 L two-level SNIPS steamer.
 
@@ -16,35 +20,21 @@ Equipment: approximately 4 L two-level SNIPS steamer.
 
 Do not reuse this routine for raw chicken without deriving a safe process for the raw product.
 
-## Sistema 3.2 L: proposed one-container meal
-
-The following was an assistant-proposed starting point, not a user-tested or manufacturer-validated routine:
-
-- 250 g pre-cooked frozen `ja!` chicken strips.
-- 300 g frozen broccoli.
-- 250–300 g sweet potato cut into roughly 1–1.5 cm cubes.
-- 40–50 ml water in the Sistema 3.2 L steamer.
-- 16 minutes at 600 W, followed by two minutes resting closed.
-
-This water quantity belongs to the Sistema workflow and must not be substituted for the 400 ml used with the larger SNIPS setup.
-
-On a first run, check the food during cooking, verify the coldest piece is safely heated, and adjust time for the actual product, starting temperature, cut size, and microwave behavior.
-
-## General preparation preference
+## 🎯 General preparation preference
 
 - Favor one-start or low-intervention microwave workflows.
 - Pre-cooked frozen protein, frozen vegetables, ready-to-eat legumes, microwave rice, cooked packaged potatoes, and flakes are especially compatible with the routine.
 - Arthur does not currently cook dry quinoa, rice, lentils, or other dried legumes. These product forms are paused; ready-to-eat tins, jars, pouches, microwaveable formats, or flakes are preferred when their own inventory status is active.
 - Minimize cleanup and active preparation time. If two methods are similarly healthy and safe, prefer the one with fewer steps and less monitoring.
 
-## Opened jarred-mushroom preservation
+## 🍄 Opened jarred-mushroom preservation
 
 - Arthur typically uses only about 50 g mushrooms at a time, while a commercial jar may hold roughly 500 g and requires rapid use after opening.
 - On the day the jar is opened, drain the unused cooked mushrooms well and divide them immediately into separate approximately 50 g freezer-safe bags or containers. Remove excess air, seal, and label them.
 - Do not freeze the original commercial glass jar and do not keep thawing and refreezing one large bag. The intended two-week consumption window is reasonable in the freezer; longer quality storage is also possible, but exact package and freezer conditions still apply.
 - Expect thawed mushrooms to be softer and wetter. Thaw one portion in the refrigerator and use it within two to three days, or heat the portion directly from frozen when the meal's tested microwave method supports that.
 
-## Frozen-fruit thawing habit
+## 🫐 Frozen-fruit thawing habit
 
 - Arthur now has suitable containers for thawing portions in the refrigerator.
 - Daily opening, weighing, reclosing, and returning a large frozen-fruit bag creates enough friction that Arthur often skips the fruit entirely. Do not make daily weighing the default workflow.
@@ -54,7 +44,7 @@ On a first run, check the food during cooking, verify the coldest piece is safel
 - Do not leave frozen fruit to thaw at room temperature as the default, and do not refreeze a fully thawed portion.
 - For frozen berries intended to be eaten without subsequent cooking, check the package and current official food-safety guidance; freezing does not reliably eliminate viruses. German consumer guidance recommends heating frozen berries before consumption when applicable.
 
-## Currently proven protein formats
+## 🍗 Currently proven protein formats
 
 - Frozen salmon has worked reliably in the SNIPS steamer, including raw salmon that was frozen before preparation.
 - Pre-cooked frozen chicken formats such as chicken schnitzel, fillet steaks, or strips have worked reliably in the microwave steamer.
@@ -62,7 +52,7 @@ On a first run, check the food during cooking, verify the coldest piece is safel
 - Other non-frozen raw meat or fish formats are not established defaults. A new format needs an explicit, safe microwave-compatible preparation method before it enters the recurring shopping list.
 - When the proven frozen chicken products and suitable frozen salmon are unavailable, do not silently buy incompatible fresh or raw meat. Leave the item out, use an already approved non-meat protein, or ask Arthur to choose another source.
 
-## SNIPS: White Tiger prawn trial
+## 🍤 SNIPS: White Tiger prawn trial
 
 - REWE Beste Wahl White Tiger prawns without shell, 450 g, are blanched, peeled, deveined, individually removable, and frozen; the retailer instructs users to thaw them completely before cooking.
 - The method itself is manufacturer-supported: SNIPS publishes a prawn recipe for the 4 L two-tray steamer using 400 ml water and 600 W, and its cooking table includes shrimp. There is no inherent incompatibility between these prawns, microwave steam, and the SNIPS vessel.

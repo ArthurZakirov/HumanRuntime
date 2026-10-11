@@ -1,42 +1,50 @@
 # Inventory and replenishment system
 
-## Goal
+## 🧭 Inventory decision route
+
+> **Current execution contract (October 2026):** Use [grocery-operator-workflow.md](grocery-operator-workflow.md) for receipt-derived inventory forecasts, full photo count reconciliation, expiry forecasts, special consumption caps, and shopping decisions when a cycle slips. The 7/14/28-day schedules in this document are **review opportunities**, not mandatory waits for depleted desired foods. The older per-food stock counts and historical basket rules below may predate the full 2026-10-11 snapshot in Notion.
+
+Use [replenishment logic](#-replenishment-logic) to classify an item, [practical rhythm](#-practical-rhythm) for the relevant cycle, and [minimal weekly interaction](#-minimal-weekly-interaction) for a quick review. The [initial cadence classification](#-initial-cadence-classification) still holds unmigrated historical food rows, not a live shopping list.
+
+## 🎯 Goal
 
 Generate the relevant shopping list automatically so Arthur does not have to remember every regularly consumed food. Weekly perishables should surface frequently; durable reserves should stay hidden until their stock or predicted coverage approaches the reorder point.
 
 Catalogue completeness is tracked separately in [food-review-ledger.md](food-review-ledger.md). The operational table below is not proof that every historical or potential food has been reviewed. Never claim completeness while that ledger contains unresolved candidates or an unreconciled source pool.
 
-## One canonical food table
+## 🗃️ One canonical food table
 
 Start with one food table. Add a linked shops table only when shop-level details would otherwise be repeated across several foods.
 
-Each food row should contain:
+Each food row should contain the relevant structured information (the live schema is in Notion):
 
-- `Food`: stable user-facing name.
-- `Status`: mandatory lifecycle state: `active`, `paused`, `trial`, `conditional`, or `manual`. Never delete a historically relevant food merely because it is not currently consumed; change it to `paused` so it can be reactivated later.
-- `Category`: fruit, vegetable, dairy, protein, legume, pantry, drink, supplement, medication, or other.
-- `Preferred product`: exact listing when stable.
-- `Product form`: fresh, frozen raw, frozen pre-cooked, refrigerated, UHT, dried, powder, canned, jarred, pouch, or another explicit form. This field is mandatory for every active row.
-- `Preferred shop`: primary supplier.
-- `Backup shops`: ranked alternatives.
-- `Shop availability`: explicitly record whether the preferred item is available, unavailable, or unverified at each relevant shop. Never send a shopping agent to search a known-unavailable shop without a deliberate recheck instruction.
-- `Storage`: refrigerator, freezer, pantry, or other.
-- `Shelf-life class`: days, weeks, months, or years when unopened; keep exact shelf life unknown unless the package or manufacturer confirms it.
-- `After-opening rule`: refrigerated duration or immediate-use expectation when relevant.
-- `Preparation status`: proven, ready-to-eat, needs a verified method, or incompatible with current equipment.
-- `Cadence type`: weekly fresh, periodic fresh, bulk cycle, stock-based, seasonal, or trial.
-- `Consumption per week`: amount or units when known.
-- `Package size`: amount supplied by one unit.
-- `Target stock`: desired amount immediately after replenishment.
-- `Reorder point`: amount or remaining coverage that triggers action.
-- `Current stock`: most recently confirmed quantity; leave unknown rather than inventing it.
-- `Last purchase date` and `last purchase quantity`.
-- `Estimated run-out date`: derived only when consumption and stock or purchase quantity are sufficiently known.
-- `Next check date`: when the item should reappear for a quick stock confirmation.
-- `Substitutes`: approved alternatives in priority order.
-- `Maximum unit price`: optional price guardrail.
-- `Confidence`: confirmed, inferred from history, or proposed.
-- `Notes`: freshness, shelf-life, selection, or preparation constraints.
+| Field | Purpose |
+| --- | --- |
+| `Food` | stable user-facing name. |
+| `Status` | mandatory lifecycle state: `active`, `paused`, `trial`, `conditional`, or `manual`. Never delete a historically relevant food merely because it is not currently consumed; change it to `paused` so it can be reactivated later. |
+| `Category` | fruit, vegetable, dairy, protein, legume, pantry, drink, supplement, medication, or other. |
+| `Preferred product` | exact listing when stable. |
+| `Product form` | fresh, frozen raw, frozen pre-cooked, refrigerated, UHT, dried, powder, canned, jarred, pouch, or another explicit form. This field is mandatory for every active row. |
+| `Preferred shop` | primary supplier. |
+| `Backup shops` | ranked alternatives. |
+| `Shop availability` | explicitly record whether the preferred item is available, unavailable, or unverified at each relevant shop. Never send a shopping agent to search a known-unavailable shop without a deliberate recheck instruction. |
+| `Storage` | refrigerator, freezer, pantry, or other. |
+| `Shelf-life class` | days, weeks, months, or years when unopened; keep exact shelf life unknown unless the package or manufacturer confirms it. |
+| `After-opening rule` | refrigerated duration or immediate-use expectation when relevant. |
+| `Preparation status` | proven, ready-to-eat, needs a verified method, or incompatible with current equipment. |
+| `Cadence type` | weekly fresh, periodic fresh, bulk cycle, stock-based, seasonal, or trial. |
+| `Consumption per week` | amount or units when known. |
+| `Package size` | amount supplied by one unit. |
+| `Target stock` | desired amount immediately after replenishment. |
+| `Reorder point` | amount or remaining coverage that triggers action. |
+| `Current stock` | most recently confirmed quantity; leave unknown rather than inventing it. |
+| `Last purchase date` / `last purchase quantity` | The recorded date and amount of the most recent purchase. |
+| `Estimated run-out date` | derived only when consumption and stock or purchase quantity are sufficiently known. |
+| `Next check date` | when the item should reappear for a quick stock confirmation. |
+| `Substitutes` | approved alternatives in priority order. |
+| `Maximum unit price` | optional price guardrail. |
+| `Confidence` | confirmed, inferred from history, or proposed. |
+| `Notes` | freshness, shelf-life, selection, or preparation constraints. |
 
 Use these availability states per shop and attach a last-observed date when known:
 
@@ -50,7 +58,7 @@ Product form and price are part of availability. For example, an expensive peele
 
 Substitution can preserve a category target without changing a food's lifecycle state. A paused food may be used as a one-order emergency substitute only when an explicit category rule permits it; this does not reactivate that food or add it to future recurring orders. Preserve the requested amount and require comparable nutrition, price, storage, and preparation.
 
-## Replenishment logic
+## 🧮 Replenishment logic
 
 Use three output states:
 
@@ -64,7 +72,7 @@ Do not classify or schedule an item until its product form is known. The same ba
 
 For short-lived foods, cadence can create a provisional recommendation even without a live count. Phrase it as “probably due” until Arthur confirms that he still consumes the item and needs it this cycle.
 
-## Practical rhythm
+## 📆 Practical rhythm
 
 - Seven-day order: generate `Buy now` and `Check stock` only for short-lived fresh foods such as bananas, tomatoes, cucumbers, and other items assigned to the weekly cycle.
 - Fourteen-day order: handle longer-lasting refrigerated staples such as Skyr and kefir at their two-week target stocks, then review the accumulated `Flink intermittent` and `other-shop only` gaps. When essentials such as ordinary carrots, suitable frozen chicken, or affordable salmon are unavailable through Flink, use this Saturday for a targeted in-person REWE trip instead of assuming the missing items can wait. The REWE trip may supplement or replace that cycle's Flink order depending on the full basket.
@@ -73,7 +81,7 @@ For short-lived foods, cadence can create a provisional recommendation even with
 - During the initial classification pass, review the broad food pool to assign every wanted item to one of these rhythms. Once classified, do not repeat the full catalogue for every order; show only the items belonging to the cycle that is currently due, plus any exceptional low-stock alert.
 - After every completed order: update purchase date and quantity. If practical, update current stock; otherwise schedule the next check from the known consumption rate.
 
-## Saturday task schedule
+## ✅ Saturday task schedule
 
 Google Tasks in the `❤️‍🩹🥗Health` list operationalize the three main cycles. The current one-year schedule starts on Saturday, 26 September 2026, at 09:00:
 
@@ -85,7 +93,9 @@ When cycles coincide, keep the tasks separate so that each can be checked off in
 
 The fourteen-day Saturday is also the regular physical-store decision point. First compare the due list against live Flink stock and price. If Flink cannot supply important acceptable forms, create a compact REWE gap list and go to REWE that Saturday; do not count an overpriced or materially different listing as a successful substitute. Products known to be exclusive to dm remain a separate dm need and should be batched rather than causing an ad-hoc trip for one item.
 
-## Initial cadence classification
+## 🛒 Initial cadence classification
+
+> **Migrationsstatus (11.10.2026):** Die Einträge für Haferflocken, frischen Brokkoli und Bananen wurden mit ihren produktspezifischen Regeln nach Notion übertragen und aus der folgenden Quelltabelle entfernt. Für diese drei Produkte ausschließlich die Notion-Datenbank `🥗 Ernährungs- & Einkaufsrhythmus` verwenden. Noch vorhandene Zeilen sind nicht als vollständig migriert bestätigt.
 
 This is a draft derived from purchase history and stated routines. It is not a finalized order.
 
@@ -102,8 +112,6 @@ Never delete a historically relevant food merely because it leaves the current r
 | Food or group | Status | Source / availability | Initial cadence | Current rule | Confidence |
 | --- | --- | --- | --- | --- | --- |
 | Skyr or similar Fage-style natural yogurt, 500 g refrigerated unit | active | Flink preferred; verify live availability | refrigerated two-week cycle | Consume one 500 g unit/day across this interchangeable category; about two portions per two-week cycle are bought during Munich commute days, leaving a home target of about twelve units; check printed best-before dates | confirmed |
-| Fresh broccoli, approximately 500 g | active | Flink preferred; verify live availability | weekly fresh | Buy one approximately 500 g fresh broccoli every week. This is the fixed fresh component of the cruciferous-vegetable rhythm; do not buy a second fresh head for later weeks because it may spoil | confirmed exact weekly quantity and spoilage constraint |
-| Fresh bananas | active | Flink/Wolt exact verified listing: `Bananen Chiquita 5 Stk.`; no single-banana listing found on 20 September 2026 | weekly fresh | Current starting rhythm is one/day and seven per weekly order; store outside the refrigerator and away from apples, preferably with mixed or slightly green ripeness. The verified Wolt pack contains five, so do not silently buy ten to force the seven-unit target; report the two-unit shortfall when no affordable single or smaller pack is available | confirmed starting rhythm, exact Wolt listing, and pack-size gap |
 | Fresh kiwi | active | Flink preferred; verify live availability | weekly fresh | Current starting quantity is four per weekly order; adjust after reviewing the total fruit basket | confirmed starting quantity |
 | Fresh pears | active | Flink/Wolt verified affordable listing: `Birne Abate 1 Stk.` at EUR 0.79 each on 20 September 2026; search `Birnen 1kg` or exact name; REWE in-person fallback | weekly fresh | Buy approximately four to six ordinary affordable pears. Wolt did not expose a suitable multipack in the verified search, so four `Birne Abate 1 Stk.` units are the current affordable fallback. Do not buy `Birne Limonera 1 Stk.` at EUR 2.59 each or another premium-priced variety merely to preserve the category | confirmed current-order quantity, exact Wolt listing, search alias, and price rule |
 | Fresh watermelon | active | Flink/Wolt intermittent; searches `Wassermelone`, `Mini Wassermelone`, and `Melone` found no suitable fresh listing on 20 September 2026 | weekly fresh | Current stock is zero, so add one unit when available. Prefer one small whole watermelon sized for one person, or a small pre-cut segment such as a quarter or half. Do not substitute watermelon-flavored sweets or a premium mixed-fruit cup. If the three verified search terms still produce no suitable fresh listing after results finish loading, omit and report unavailable | confirmed current stock, search aliases, current unavailability, product form, cadence, and storage constraint |
@@ -151,7 +159,6 @@ Never delete a historically relevant food merely because it leaves the current r
 | Schwarzwaldmilch Protein UHT milk 0.9%, 1 L bottle | active | Flaschenpost only; unavailable at Flink | separate Flaschenpost stock-based four-to-eight-week bulk cycle | The user-reported stock on 28 September 2026 is approximately 3.5 bottles. At the earlier observed consumption of roughly 0.39 L/day, that is only about nine days of coverage, although the rate remains provisional. Recount bottles before the next Flaschenpost order. The delivered best-before horizon was approximately three months, so a larger reserve is acceptable. At replenishment, meet the live minimum order with milk and recalculate the required bottle count from the current unit price; do not reuse the historical count without checking the live total | confirmed supplier and current visual stock; consumption rate remains provisional |
 | Bread, pumpernickel, and packaged whole-grain bread | paused | No active supplier; do not shop while paused | paused, excluded from recurring orders | Arthur currently wants to remain bread-free. Do not buy, surface, or use bread as an automatic carbohydrate substitute unless he explicitly reactivates it | confirmed exclusion |
 | Pesto | paused | Flaschenpost one-time free item; do not reorder | one-time item, excluded from recurring orders | The 190 g Cookina Pesto alla Genovese in the 11 September 2026 Flaschenpost delivery was a free one-time item. Do not buy, surface, or substitute pesto in any recurring cycle | confirmed one-time status and exclusion |
-| Oats, 500 g packs | active | Flink preferred; verify live availability | four-week pantry cycle | Consumption is 50–60 g/day. The user-reported stock on 28 September 2026 is two packs, 1 kg total, covering roughly 17–20 days. No immediate purchase is required in the current cart; recount at the next cycle review and replenish before coverage falls below the following review window | confirmed consumption and current visual stock |
 | Natural nut mix, 200 g pack | active | Flink preferred; verify live availability | four-to-eight-week bulk cycle, excluded from weekly and fourteen-day ordering | Consumption is approximately 50 g/day. The user-reported stock on 28 September 2026 covers only one more breakfast. Seven new 200 g packs provide 1.4 kg, or about 28 days, and are appropriate in the current cart. Recount unopened packs at the next four-week review | confirmed consumption, near-empty stock, package size, and current-order quantity |
 | Individual nut varieties, including almonds, walnuts, macadamias, hazelnuts, and cashews | paused | No active supplier; do not shop while paused | paused, excluded from recurring orders | Arthur is currently buying only the natural nut mix. Do not surface or buy separate single-variety nut packs, and do not replace an unavailable nut mix with individual varieties unless Arthur explicitly reactivates them | confirmed group-wide pause and active replacement |
 | Flaxseed | active | Unavailable at Flink; batch with the next REWE/dm in-person trip and verify the current shelf | approximately eight-week pantry cycle | Current stock is zero; buy exactly one pack during the next combined REWE/dm trip because Flink does not carry it. A pack appears to last roughly two months, so do not add it automatically to every four-week order. Recheck at the eight-week horizon or when the opened pack is nearly empty; refine consumption and package-size data after this purchase | confirmed current stock, current-order quantity, and approximate cadence |
@@ -177,7 +184,7 @@ Never delete a historically relevant food merely because it leaves the current r
 | Yogi Tea turmeric chai and ginger-lemon tea, tea bags | active seasonal | Flink preferred if available; equivalent products acceptable; verify live assortment | four-week autumn and winter cycle | These teas are not consumed in summer but become active in the colder season from approximately September or October. Current stock is about ten turmeric-chai bags and six ginger-lemon bags, enough through the current month, so buy none in the current cycle. Starting with the next four-week order, buy one pack of turmeric chai and one pack of ginger-lemon tea per cycle. Yogi Tea is preferred; use a genuinely similar chai or ginger-lemon tea when the exact product is unavailable. Review consumption before increasing the quantity, because winter use may range from one to four bags/day and Arthur may later switch partly to fresh ginger root | confirmed seasonal status, current stock, current-cycle omission, next-cycle quantity, and substitution rule |
 | Dark chocolate | paused | Unavailable at Flink; other shops unverified; do not shop while paused | excluded from diet and recurring orders | Do not buy or surface it. This explicit exclusion replaces the earlier rule that allowed a maximum of one pack at home | confirmed exclusion |
 
-## Supplements
+## 💊 Supplements
 
 Supplements are tracked separately from food. They must never be added to a grocery cart merely because a food-shopping cycle is due.
 
@@ -189,7 +196,7 @@ Supplements are tracked separately from food. They must never be added to a groc
 | AG1 powder | paused | No active supplier while paused | excluded from recurring orders | Retain as historical supplement context, but do not track stock, schedule, surface, or buy it until Arthur explicitly reactivates it | confirmed supplement category and pause |
 | Vitamin D3 | manual | Arthur selects supplier when manually requested | active manual stock item; no recurring cadence | A sufficient reserve is currently available. Do not schedule, remind, or surface Vitamin D3 in recurring shopping cycles. Arthur will report when the visible stock is running low; only then determine the exact product, quantity, and supplier for replenishment | confirmed active status, available reserve, and manual reorder trigger |
 
-## Medications
+## 💉 Medications
 
 Medications are never grocery substitutions and must not be added to Flink, Wolt, REWE, dm, or Flaschenpost carts. Any purchase requires a separate pharmacy review and Arthur's approval of the exact product, quantity, price, and transaction.
 
@@ -197,7 +204,7 @@ Medications are never grocery substitutions and must not be added to Flink, Wolt
 | --- | --- | --- | --- | --- | --- |
 | Symbioflor 1 | trial | Pharmacy product; verify the current exact listing and leaflet before purchase | proposed chronic-sinusitis experiment; no automatic cadence yet | Record as a proposed medication trial for chronic recurrent sinusitis. Do not treat it as acute cold treatment, a supplement, or a grocery item. Do not purchase automatically. If Arthur activates the trial, agree on the start date, exact quantity, evaluation horizon, and tracking criteria before buying | confirmed requested medication entry; purchase and trial details not yet authorized |
 
-## Minimal weekly interaction
+## 🔄 Minimal weekly interaction
 
 The weekly workflow should ask Arthur only about ambiguous or stock-based items, for example:
 
@@ -207,7 +214,7 @@ The weekly workflow should ask Arthur only about ambiguous or stock-based items,
 
 After those answers, prepare the retailer-specific carts and present substitutions, changed prices, fees, and delivery times for final approval.
 
-## Weekly memory checklist
+## 📝 Weekly memory checklist
 
 Use this checklist to prevent forgotten categories. It is a review pool, not a command to buy every item.
 

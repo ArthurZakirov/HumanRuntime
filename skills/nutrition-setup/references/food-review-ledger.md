@@ -1,12 +1,16 @@
 # Food review ledger
 
-## Purpose
+## 🧭 Catalogue review route
+
+Start with [source coverage](#-source-coverage) and [unresolved candidates](#-known-unresolved-candidates); use the [review order](#-systematic-review-order) for the next decision and the [completion gate](#-completion-gate) before declaring the catalogue complete.
+
+## 🎯 Purpose
 
 This ledger makes the food-catalogue review auditable. The operational table in [inventory-system.md](inventory-system.md) contains foods that already have a usable shopping decision. This file contains discovered candidates that still need an explicit decision or a finer product-form split.
 
 Lifecycle status such as `active` or `paused` is not the same as review state. A food can be paused and fully reviewed, or historically active but still inadequately classified.
 
-## Review states
+## 🏷️ Review states
 
 - `unreviewed`: discovered from a source but not yet discussed as its own product form;
 - `in-review`: currently being discussed;
@@ -19,7 +23,7 @@ Never claim that the food catalogue is complete while:
 - any candidate is `deferred` without a future review trigger; or
 - a known source pool has not been imported and reconciled.
 
-## Source coverage
+## 📚 Source coverage
 
 | Source pool | Current coverage | Blocking gap |
 | --- | --- | --- |
@@ -30,7 +34,7 @@ Never claim that the food catalogue is complete while:
 | Seventeen historical REWE eBons / 98 consolidated foods | incomplete | The repository contains only a summary, not the original workbook or complete 98-food list. Recover or rebuild that source before claiming completeness |
 | Flink and Flaschenpost receipts | partially represented | Reconcile every exact line item when the full receipt export is available |
 
-## Systematic review order
+## 🗂️ Systematic review order
 
 Review exactly one unresolved candidate at a time in this order:
 
@@ -49,18 +53,18 @@ Review exactly one unresolved candidate at a time in this order:
 
 After each answer, update the review state and operational mapping before presenting the next unresolved candidate. State progress as `candidate N of M in category` and never switch to a free-association suggestion list.
 
-## Known unresolved candidates
+## ❓ Known unresolved candidates
 
 These candidates are already evidenced but not yet individually resolved in the operational inventory. Grouped rows do not count as a resolution when members can differ by supplier, form, preparation, or cadence.
 
 | ID | Candidate and product form | Category | Provenance | Review state | Operational mapping | Notes |
 | --- | --- | --- | --- | --- | --- | --- |
 
-## Separate household-supplies candidate
+## 🧽 Separate household-supplies candidate
 
 The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. This is not food and must not be forced into the food table. It needs a future kitchen-consumables ledger so recurring grocery-adjacent supplies are not forgotten.
 
-## Resolved corrections from the systematic audit
+## ✅ Resolved corrections from the systematic audit
 
 | ID | Candidate and product form | Review state | Resolution | Operational mapping | Reviewed on |
 | --- | --- | --- | --- | --- | --- |
@@ -89,7 +93,7 @@ The exact Flink receipt also contained `Melitta Filtertüten 1x4, 80 Stück`. Th
 | SUP-002 | Vitamin D3 supplement | resolved | active manual stock item; a reserve is available, with no fixed cadence or automatic reminder. Arthur will report when stock is low, then the exact product and purchase details can be chosen | `Vitamin D3 supplement` | 2026-09-20 |
 | MED-001 | Symbioflor 1 medication | resolved | proposed medication trial for chronic recurrent sinusitis; keep separate from food and supplements, do not add to grocery orders, and do not purchase automatically. Exact product, quantity, price, start date, and evaluation plan require a separate approved pharmacy transaction | `Symbioflor 1` in the medications section | 2026-09-20 |
 
-## Completion gate
+## 🚦 Completion gate
 
 A full review is complete only when:
 

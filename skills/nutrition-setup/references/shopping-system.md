@@ -1,10 +1,16 @@
 # Grocery shopping system
 
-## Objective
+## 🧭 Shopping route
+
+> **Current execution contract (October 2026):** Follow [grocery-operator-workflow.md](grocery-operator-workflow.md) for the end-to-end weekend inventory→purchase-intent→Wolt/Flink/REWE cart→Gmail receipt loop. This reference retains historical shopping research, suppliers, and category-specific restrictions; its old fixed-date/in-person REWE assumptions and September basket examples do **not** override the newer end-to-end method.
+
+Follow the [preferred workflow](#-current-preferred-workflow) to prepare a basket; apply [ordering rules](#-ordering-rules) when comparing listings, check [supplier-specific stock](#-known-suppliers-and-long-cycle-stock), and require explicit approval before checkout. Historical baskets are evidence, not active templates.
+
+## 🎯 Objective
 
 Reduce grocery-order preparation from roughly an hour to a short review. The main difficulty is not payment; it is reconstructing the product list, finding exact listings, choosing substitutes, and deciding quantities under time pressure.
 
-## Current preferred workflow
+## 🛒 Current preferred workflow
 
 1. Maintain one canonical recurring list with desired quantity, preferred product, acceptable substitutes, price ceiling, and whether the item is required or optional.
 2. Keep a prepared cart in the chosen delivery service. Wolt exposed `Deine Bestellungen` with both `Warenkörbe` and `Nochmal bestellen` when verified on 20 September 2026; re-check the current UI before promising persistence or exact quantity restoration. Use a saved Flink cart as the fast operational copy when it remains suitable.
@@ -19,7 +25,7 @@ The active canonical list has not yet been finalized. Historical baskets and pla
 
 Direct Flink preorder availability is conditional rather than categorically present or absent. On Sunday, 20 September 2026, the direct Flink site offered Monday delivery from 08:00–09:00 under “Heute planen, morgen genießen”; on the preceding Saturday evening it showed closed and blocked checkout. Re-check the address-specific live checkout each time instead of assuming that direct preorder is always unavailable or always available.
 
-## Verified reuse and scheduling capabilities
+## 🔄 Verified reuse and scheduling capabilities
 
 Read-only browser inspection on 20 September 2026 established the following current capabilities:
 
@@ -30,13 +36,13 @@ Read-only browser inspection on 20 September 2026 established the following curr
 
 Closest practical automation: on the ordering day, generate the due cycle from the canonical list; use `Nochmal bestellen` for the most relevant prior Wolt order when available; reconcile quantities, substitutions, price, and stock; inspect or provisionally select a delivery window; then stop and present the exact cart, total, substitutions, and window to Arthur. Only after his explicit approval may the current transaction be placed. After a successful order, create or update a calendar block for the confirmed delivery window and list any unavailable essentials that still require a REWE/dm trip. Never create the calendar delivery block before the retailer has confirmed the slot.
 
-## Suggested canonical-list fields
+## 🗃️ Suggested canonical-list fields
 
 The maintained schema and initial cadence classifications live in [inventory-system.md](inventory-system.md). Use that reference as the source of truth instead of duplicating field definitions here.
 
 For the initial implementation, keep the preferred shop and exact product directly on each food row. Add a separate linked `Shops` table only when shop-level information—membership, delivery threshold, fees, account-specific cadence, or several products from the same supplier—would otherwise be duplicated. A food may link to more than one shop in ranked order.
 
-## Ordering rules
+## ✅ Ordering rules
 
 - Prefer inexpensive conventional products unless organic quality has a specific requested benefit.
 - Normalize prices per kilogram, liter, or item before comparing.
@@ -53,7 +59,7 @@ For the initial implementation, keep the preferred shop and exact product direct
 - Treat a retailer search as incomplete while the UI still says it is searching or shows loading placeholders. Wait until the final results state is visible before deciding availability. If the expected listing is absent, retry a small set of ordinary German synonyms, spelling variants, singular/plural forms, and the retailer's previously verified exact product name. Record successful retailer-specific names on the food row. Never add the first vaguely related result without verifying its product name, form, quantity, and price; category collisions such as baby food in a carrot search are not substitutes.
 - Batch non-Flink gaps into the fourteen-day REWE decision instead of creating repeated one-product trips. Track dm-only goods, such as buckwheat flakes, separately but buy them on the same physical trip whenever a REWE visit is already planned, because dm is next to REWE.
 
-## Known suppliers and long-cycle stock
+## 🏪 Known suppliers and long-cycle stock
 
 These are current stock and replenishment signals, not fully specified recurring orders:
 
@@ -68,7 +74,7 @@ These are current stock and replenishment signals, not fully specified recurring
 
 Track supplier, current reserve, expected depletion, and reorder rule separately from ordinary weekly groceries. Do not place these long-cycle products into every Wolt or Flink cart.
 
-## Observed large Flink basket
+## 📦 Observed large Flink basket
 
 The September 2026 basket contained 44 product lines and is evidence of preferences, not a weekly template. Representative groups:
 
@@ -81,7 +87,7 @@ The September 2026 basket contained 44 product lines and is evidence of preferen
 - Other recurring foods: kimchi at two jars per month, olive oil, oats, coffee, corn cakes, rice cakes, and lentil cakes. Jarred mushrooms and pumpernickel are currently paused and must not surface automatically.
 - Seasonal tea: from the next four-week autumn/winter order, one pack turmeric chai and one pack ginger-lemon tea; prefer Yogi Tea but accept a close equivalent when unavailable. Buy none in the current cycle because existing bags cover the month.
 
-## Historical eight-week planning quantities
+## 📊 Historical eight-week planning quantities
 
 These were proposed from stated consumption, not permanently approved standing orders:
 
@@ -95,7 +101,7 @@ These were proposed from stated consumption, not permanently approved standing o
 
 Always check present stock, current consumption, available storage, and minimum shelf life before using these quantities.
 
-## Provenance
+## 📚 Provenance
 
 The maintained context was consolidated from:
 
