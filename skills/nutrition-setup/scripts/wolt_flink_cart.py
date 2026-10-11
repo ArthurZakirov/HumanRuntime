@@ -170,6 +170,25 @@ def cart_items():
     return data
 
 
+
+def global_addition_guard(manifest_file: str, wolt_tab: str, rewe_tab: str,
+                          exact_title: str, intended_packs: int) -> None:
+    """Fail closed BEFORE any plus clicks if another cart owns the same food."""
+    from pathlib import Path
+    from reconcile_grocery_carts import CartLine, read_rewe, proposed_addition_errors
+    data = json.loads(Path(manifest_file).read_text())
+    # Cart view is the truth. Search listing count alone cannot verify other shops.
+    wolt_rows = [CartLine('wolt', item['title'],item['quantity']) for item in cart_items()]
+    try:
+        rewe_rows = read_rewe(rewe_tab)
+    finally:
+        browser('tab', wolt_tab)
+    problems=proposed_addition_errors(data,wolt_rows+rewe_rows,'wolt',exact_title,intended_packs)
+    if problems:
+        raise RuntimeError('GLOBAL CART ALLOCATION BLOCKED: ' + '; '.join(problems))
+    print('GLOBAL CART ALLOCATION VERIFIED before write:',exact_title,
+          'target packs:',intended_packs,flush=True)
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--tab', required=True, help='Existing authenticated Wolt tab, e.g. t9')
@@ -178,12 +197,16 @@ def main():
     parser.add_argument('--recover-only', action='store_true', help='Reload Wolt tab, choose Ja to keep saved cart, then verify unit count; do not add anything')
     parser.add_argument('--exact-title', help='Exact chosen listing name from inspected search results')
     parser.add_argument('--target', type=int, help='Desired total quantity of this exact SKU in the cart')
+    parser.add_argument('--manifest', help='REQUIRED on writes: canonical cross-shop goals + SKU mapping JSON')
+    parser.add_argument('--rewe-tab', help='REQUIRED on writes: REWE cart tab for global quantity check')
     parser.add_argument('--max-unit-price', type=float, help='Maximum allowed price per listing in EUR')
     args = parser.parse_args()
     if not args.recover_only and not args.search:
         parser.error('--search required unless using --recover-only')
     if not args.inspect and not args.recover_only and (not args.exact_title or args.target is None):
         parser.error('For cart edits provide --exact-title and --target. Use --inspect for research.')
+    if not args.inspect and not args.recover_only and not (args.manifest and args.rewe_tab):
+        parser.error('Write requires --manifest and --rewe-tab; single-shop target is unsafe.')
     if args.target is not None and not 0 <= args.target <= 30:
         parser.error('--target must be 0 to 30')
     browser('tab', args.tab)
@@ -213,6 +236,8 @@ def main():
         if not m or float(m.group(1).replace('.', '').replace(',', '.')) > args.max_unit_price:
             raise RuntimeError('Price missing or above ceiling; no item added.')
     current = candidate['quantity']
+    # Do not write based on a Wolt-only target; eggs may already be in REWE.
+    global_addition_guard(args.manifest, args.tab, args.rewe_tab, args.exact_title, args.target)
     if current > args.target:
         raise RuntimeError(f'Already {current} in cart, greater than target {args.target}; do not remove without review.')
     if current == args.target:
@@ -237,6 +262,8 @@ def main():
     now = next((x['quantity'] for x in verify['items'] if x['title']==args.exact_title), -1)
     if now != args.target:
         raise RuntimeError(f'Product-card quantity mismatch: {now} != {args.target}')
+    # Second live cross-shop read catches external/cart-state changes during add.
+    global_addition_guard(args.manifest, args.tab, args.rewe_tab, args.exact_title, args.target)
     items = cart_items()
     in_cart = [x for x in items if x['title'] == args.exact_title]
     if len(in_cart) != 1 or in_cart[0]['quantity'] != args.target:

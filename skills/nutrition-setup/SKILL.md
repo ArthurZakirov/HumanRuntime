@@ -38,6 +38,13 @@ Use the four currently existing, separately scoped Notion databases. Distinguish
 
 The former **Produkte** and **Händlerangebote** databases were moved to Notion trash on 2026-10-11 per user instruction. Do not reference them or recreate them. Store useful SKU-specific details with the relevant food record or an approved private product mapping; verify current price and availability in the seller UI. Migration is incremental: remove a product-specific Markdown record only after its relevant facts have been saved and verified in Notion. The catalogue remains incomplete.
 
+## 🚀 REWE exact-ID cart workflow
+
+- Use logged-in REWE "Deine Produkte" favorites/purchases as a private exact-product lookup. Run scripts/rewe_export_catalog.py --tab tN to refresh the complete private SKU cache of IDs, variants, names and observed availability; otherwise reuse an already verified cache.
+- For **one delivery only**, derive an explicit JSON manifest of {"id":"...","quantity":N} from the canonical Notion food needs and coverage. Run scripts/rewe_cart_by_id.py --tab tN --manifest /tmp/one-delivery.json in dry-run first; --apply sets the *final* quantity but never checks out. REWE carts are account-wide, not per tab.
+- To synchronize the private exported REWE catalog into the separate Notion product table: run scripts/rewe_sync_notion.py to preview and append --apply to write. This is an ID-based upsert and preserves hand-edited assignment/active/notes fields. Products that drop out of favorites are not deleted. Refresh the browser export beforehand.
+- The ID cache is a **product-selection index**, not the canonical active-food list, and the SKU script does NOT guarantee the nutritional catalogue's completeness. See grocery-operator-workflow.md for cross-cart safeguards, including the confirmed Wolt → REWE → REWE three-week schedule superseding the still-obsolete fortnightly selector.
+
 ## ✅ Operating principles
 
 - Treat confirmed equipment models and observed purchase history as facts. Treat proposed quantities and inferred preferences as starting points that may need current confirmation.
