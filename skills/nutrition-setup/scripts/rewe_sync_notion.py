@@ -44,6 +44,24 @@ def properties(row,sources):
             "Verfügbarkeit":{"select":{"name":"Nicht verfügbar" if row["unavailable"] else "Verfügbar"}},
             "Quelle":{"multi_select":[{"name":s} for s in sources]}}
 
+def verify_rewe_sync(pages,expected_ids):
+    # Other merchants coexist in the same Notion catalogue; this sync owns only REWE IDs.
+    rewe_pages=[p for p in pages if prop_text(p["properties"].get("REWE-ID"))]
+    ids=[prop_text(p["properties"]["REWE-ID"]) for p in rewe_pages]
+    invalid=[
+        p["id"] for p in rewe_pages
+        if p.get("icon") is not None
+        or clean(prop_text(p["properties"]["Produkt"])) != prop_text(p["properties"]["Produkt"])
+    ]
+    return {
+        "total_rows":len(pages),
+        "rewe_rows":len(rewe_pages),
+        "unique_rewe_ids":len(set(ids)),
+        "missing_ids":set(expected_ids)-set(ids),
+        "duplicate_ids":{id for id in ids if ids.count(id)>1},
+        "invalid_pages":invalid,
+    }
+
 def main():
     ap=argparse.ArgumentParser(description="Idempotent REWE catalogue sync into Notion, preserving user-maintained columns.")
     ap.add_argument("--catalogue",type=Path,default=CAT)
@@ -133,9 +151,8 @@ def main():
         check.extend(out["results"])
         cursor=out.get("next_cursor")
         if not out.get("has_more"):break
-    actual={prop_text(p["properties"].get("REWE-ID")) for p in check}
-    emojis=[p["id"] for p in check if p.get("icon") is not None or clean(prop_text(p["properties"]["Produkt"])) != prop_text(p["properties"]["Produkt"])]
-    print("VERIFY rows",len(check),"unique",len(actual),"expected",len(catalog),"missing",len(set(catalog)-actual),"emoji_or_icon",len(emojis),flush=True)
-    if not set(catalog).issubset(actual) or len(check)!=len(actual) or emojis:sys.exit(2)
+    verification=verify_rewe_sync(check,set(catalog))
+    print("VERIFY rows",verification["total_rows"],"rewe",verification["rewe_rows"],"unique",verification["unique_rewe_ids"],"expected",len(catalog),"missing",len(verification["missing_ids"]),"duplicates",len(verification["duplicate_ids"]),"invalid_titles_or_icons",len(verification["invalid_pages"]),flush=True)
+    if verification["missing_ids"] or verification["duplicate_ids"] or verification["invalid_pages"]:sys.exit(2)
 
 if __name__=="__main__":main()
