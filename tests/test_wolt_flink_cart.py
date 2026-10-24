@@ -13,6 +13,17 @@ spec.loader.exec_module(shopping)
 
 
 class BrowserOperatorTests(unittest.TestCase):
+    def test_inspection_builds_short_item_urls(self):
+        import json
+        from unittest.mock import patch
+        item_id = "05da02c1d063e42d2d0a78ab"
+        payload = {"query":"Blumenkohl","heading_query":"Blumenkohl","loading_query":None,
+                   "items":[{"title":"❄️ Ja! Blumenkohl, 1 kg","price":"2,39 €","quantity":0,"item_id":item_id}]}
+        with patch.object(shopping,"browser",return_value=json.dumps(payload)):
+            result = shopping.inspect_items()
+        self.assertEqual(result["items"][0]["url"], shopping.WOLT_URL_BASE + item_id)
+
+
     def test_increment_ref_is_scoped_to_exact_product_card(self):
         tree = """
 - button "Preis 0,99 € Gurke 1 Stk. ..." [ref=e1]

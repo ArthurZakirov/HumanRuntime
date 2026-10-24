@@ -5,7 +5,7 @@ Use a complete, separate manifest for exactly ONE future delivery:
   {"items":[{"id":"7144527","quantity":1},
             {"id":"8245760","quantity":6}]}
 
-IDs (and required variant parameters) are resolved against the locally
+IDs are resolved against the locally
 exported account product catalogue. No fuzzy matching or unreviewed SKU swaps.
 Dry-run by default. --apply only changes basket quantities; it never checks
 out, submits, pays, or changes the delivery appointment.
@@ -21,9 +21,10 @@ from pathlib import Path
 import re
 import subprocess
 import time
-from urllib.parse import urlencode, urlparse, parse_qs
+from urllib.parse import urlparse
 
 
+REWE_URL_BASE = "https://www.rewe.de/shop/products/"
 CATALOG = Path.home() / ".local/share/humanruntime/rewe-products.json"
 
 
@@ -37,8 +38,7 @@ class Target:
 
     @property
     def url(self) -> str:
-        root = f"https://www.rewe.de/shop/products/{self.product_id}"
-        return root + ("?" + urlencode({"variantArticleId": self.variant_id}) if self.variant_id else "")
+        return REWE_URL_BASE + self.product_id
 
 
 def prepare_targets(manifest: dict, catalogue: dict) -> list[Target]:
@@ -135,9 +135,6 @@ def assert_same_product(target: Target, state: dict) -> None:
     path = urlparse(state["url"]).path
     if not (path.startswith("/shop/products/") or path.startswith("/shop/p/")) or not path.endswith("/" + target.product_id):
         raise RuntimeError(f"{target.product_id}: unexpected page {state['url']!r}")
-    redirect_variant = parse_qs(urlparse(state["url"]).query).get("variantArticleId", [None])[0]
-    if target.variant_id and redirect_variant and redirect_variant != target.variant_id:
-        raise RuntimeError(f"{target.product_id}: variant changed: {redirect_variant}")
     norm = lambda text: " ".join(text.casefold().split())
     if norm(state["title"]) != norm(target.title):
         raise RuntimeError(f"{target.product_id}: title changed: {state['title']!r}")

@@ -1,7 +1,7 @@
 import argparse, json, subprocess, re, time, sys
 from pathlib import Path
-from urllib.parse import urlparse
 DS="c27c8188-cf57-402b-8dc8-1b3b6c7cd23a"
+REWE_URL_BASE="https://www.rewe.de/shop/products/"
 CAT=Path.home()/".local/share/humanruntime/rewe-products.json"
 
 def ntn(*args, data=None):
@@ -35,14 +35,30 @@ def clean(t):
 
 def properties(row,sources):
     title=clean(row["title"])
-    original=row["url"]
     return {"Produkt":{"title":[{"type":"text","text":{"content":title}}]},
-            "REWE-ID":rt(row["id"]),
-            "Varianten-ID":rt(row.get("variant_id")),
-            "Produktlink":{"url":original},
+            "Artikel-ID":rt(row["id"]),
+            "Produktlink":{"url":REWE_URL_BASE+row["id"]},
             "Preis zuletzt (EUR)":{"number":price(row.get("price_text"))},
             "Verfügbarkeit":{"select":{"name":"Nicht verfügbar" if row["unavailable"] else "Verfügbar"}},
             "Quelle":{"multi_select":[{"name":s} for s in sources]}}
+
+def verify_rewe_sync(pages,expected_ids):
+    # Other merchants coexist in the same Notion catalogue; this sync owns only REWE IDs.
+    rewe_pages=[p for p in pages if (p["properties"].get("Produktlink") or {}).get("url","").startswith(REWE_URL_BASE)]
+    ids=[prop_text(p["properties"].get("Artikel-ID")) for p in rewe_pages]
+    invalid=[
+        p["id"] for p in rewe_pages
+        if p.get("icon") is not None
+        or clean(prop_text(p["properties"]["Produkt"])) != prop_text(p["properties"]["Produkt"])
+    ]
+    return {
+        "total_rows":len(pages),
+        "rewe_rows":len(rewe_pages),
+        "unique_rewe_ids":len(set(ids)),
+        "missing_ids":set(expected_ids)-set(ids),
+        "duplicate_ids":{id for id in ids if ids.count(id)>1},
+        "invalid_pages":invalid,
+    }
 
 def main():
     ap=argparse.ArgumentParser(description="Idempotent REWE catalogue sync into Notion, preserving user-maintained columns.")
@@ -70,9 +86,10 @@ def main():
         if cursor:body["start_cursor"]=cursor
         out=ntn("v1/data_sources/"+DS+"/query",data=body)
         for row in out["results"]:
-            id=prop_text(row["properties"].get("REWE-ID"))
-            if id:
-                if id in existing:raise RuntimeError(f"Duplicate existing REWE-ID {id}")
+            id=prop_text(row["properties"].get("Artikel-ID"))
+            if (row["properties"].get("Produktlink") or {}).get("url","").startswith(REWE_URL_BASE):
+                if not id:raise RuntimeError("REWE product without Artikel-ID")
+                if id in existing:raise RuntimeError(f"Duplicate existing Artikel-ID {id}")
                 existing[id]=row
         cursor=out.get("next_cursor")
         if not out.get("has_more"):break
@@ -86,17 +103,15 @@ def main():
                 current=old["properties"]
                 comparable={
                     "Produkt":prop_text(current.get("Produkt")),
-                    "REWE-ID":prop_text(current.get("REWE-ID")),
-                    "Varianten-ID":prop_text(current.get("Varianten-ID")),
+                    "Artikel-ID":prop_text(current.get("Artikel-ID")),
                     "Produktlink":(current.get("Produktlink") or {}).get("url"),
                     "Preis zuletzt (EUR)":(current.get("Preis zuletzt (EUR)") or {}).get("number"),
                     "Verfügbarkeit":((current.get("Verfügbarkeit") or {}).get("select") or {}).get("name"),
                     "Quelle":sorted(x["name"] for x in (current.get("Quelle") or {}).get("multi_select",[])),
                 }
                 expected={
-                    "Produkt":clean(meta["row"]["title"]),"REWE-ID":id,
-                    "Varianten-ID":meta["row"].get("variant_id") or "",
-                    "Produktlink":meta["row"]["url"],
+                    "Produkt":clean(meta["row"]["title"]),"Artikel-ID":id,
+                    "Produktlink":REWE_URL_BASE+id,
                     "Preis zuletzt (EUR)":price(meta["row"].get("price_text")),
                     "Verfügbarkeit":"Nicht verfügbar" if meta["row"]["unavailable"] else "Verfügbar",
                     "Quelle":sorted(meta["sources"]),
@@ -133,9 +148,8 @@ def main():
         check.extend(out["results"])
         cursor=out.get("next_cursor")
         if not out.get("has_more"):break
-    actual={prop_text(p["properties"].get("REWE-ID")) for p in check}
-    emojis=[p["id"] for p in check if p.get("icon") is not None or clean(prop_text(p["properties"]["Produkt"])) != prop_text(p["properties"]["Produkt"])]
-    print("VERIFY rows",len(check),"unique",len(actual),"expected",len(catalog),"missing",len(set(catalog)-actual),"emoji_or_icon",len(emojis),flush=True)
-    if not set(catalog).issubset(actual) or len(check)!=len(actual) or emojis:sys.exit(2)
+    verification=verify_rewe_sync(check,set(catalog))
+    print("VERIFY rows",verification["total_rows"],"rewe",verification["rewe_rows"],"unique",verification["unique_rewe_ids"],"expected",len(catalog),"missing",len(verification["missing_ids"]),"duplicates",len(verification["duplicate_ids"]),"invalid_titles_or_icons",len(verification["invalid_pages"]),flush=True)
+    if verification["missing_ids"] or verification["duplicate_ids"] or verification["invalid_pages"]:sys.exit(2)
 
 if __name__=="__main__":main()

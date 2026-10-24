@@ -18,7 +18,7 @@ class ProductIdTests(unittest.TestCase):
 
     def test_all_good(self):
         targets=MODULE.prepare_targets({"items":[{"id":"7144527","quantity":2}]},self.catalogue)
-        self.assertEqual(targets[0].url, "https://www.rewe.de/shop/products/7144527?variantArticleId=KP4QGSX5")
+        self.assertEqual(targets[0].url, "https://www.rewe.de/shop/products/7144527")
         self.assertEqual(targets[0].quantity,2)
 
     def test_invalid_quantity(self):
@@ -60,10 +60,10 @@ class ProductIdTests(unittest.TestCase):
     def test_exact_title_and_id_verification(self):
         target=MODULE.prepare_targets({"items":[{"id":"7144527","quantity":1}]},self.catalogue)[0]
         MODULE.assert_same_product(target,{"url":target.url,"title":target.title})
+        MODULE.assert_same_product(target,{"url":target.url+"?variantArticleId=OTHER","title":target.title})
         for state in [
             {"url":target.url,"title":"different product"},
             {"url":"https://www.rewe.de/shop/products/4444444","title":target.title},
-            {"url":"https://www.rewe.de/shop/products/7144527?variantArticleId=BAD","title":target.title}
         ]:
             with self.assertRaises(RuntimeError):
                 MODULE.assert_same_product(target,state)
