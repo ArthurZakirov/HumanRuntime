@@ -15,12 +15,13 @@ class SyncTest(unittest.TestCase):
         props=M.properties(row,{"Favoriten","Bereits gekauft"})
         for k in ("Zuordnung Lebensmittel","Aktiv für Einkauf","Anmerkungen"):
             self.assertNotIn(k,props)
-        self.assertEqual(props["REWE-ID"]["rich_text"][0]["text"]["content"],"7144527")
+        self.assertEqual(props["Artikel-ID"]["rich_text"][0]["text"]["content"],"7144527")
     def test_verification_ignores_other_merchants_and_preserves_rewe_checks(self):
         def page(id,title,rewe_id=None,icon=None):
             return {"id":id,"icon":icon,"properties":{
                 "Produkt":{"title":[{"plain_text":title}]},
-                "REWE-ID":{"rich_text":[{"plain_text":rewe_id}]} if rewe_id else {"rich_text":[]},
+                "Artikel-ID":{"rich_text":[{"plain_text":rewe_id}]} if rewe_id else {"rich_text":[]},
+                "Produktlink":{"url":("https://www.rewe.de/shop/products/"+rewe_id) if rewe_id else "https://wolt.com/de/deu/augsburg/venue/de-aug-karo/itemid-abc"},
             }}
         rewe=page("rewe","REWE Linsen","7814109")
         wolt=page("wolt","❄️ Wolt TK-Blumenkohl")
@@ -36,6 +37,12 @@ class SyncTest(unittest.TestCase):
         self.assertEqual(missing["missing_ids"],{"7814109"})
         invalid=M.verify_rewe_sync([page("bad","🥝 Kiwi","7814109"),wolt],{"7814109"})
         self.assertEqual(invalid["invalid_pages"],["bad"])
+
+    def test_product_link_ignores_variant_query(self):
+        row={"id":"7144527","title":"REWE Kulturheidelbeeren 500g","url":"https://www.rewe.de/shop/products/7144527?variantArticleId=KP4QGSX5","variant_id":"KP4QGSX5","price_text":"2,39 €","unavailable":False}
+        props=M.properties(row,{"Favoriten"})
+        self.assertEqual(props["Produktlink"]["url"],M.REWE_URL_BASE+"7144527")
+        self.assertNotIn("Varianten-ID",props)
 
     def test_price_and_emoji(self):
         self.assertEqual(M.price("3,29 €"),3.29)

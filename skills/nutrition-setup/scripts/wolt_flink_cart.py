@@ -17,6 +17,7 @@ import sys
 import time
 
 
+WOLT_URL_BASE = "https://wolt.com/de/deu/augsburg/venue/de-aug-karo/itemid-"
 SEARCH_SELECTOR = 'input[placeholder="Suche bei Flink Karolinenstraße"]'
 
 
@@ -37,10 +38,14 @@ def inspect_items():
           title: e.querySelector('h3[data-test-id="ImageCentricProductCard.Title"]')?.textContent?.trim() || '',
           unit: e.querySelector('[data-test-id="ImageCentricProductCardProductInfo"]')?.textContent?.trim() || '',
           price: e.querySelector('[data-test-id="ImageCentricProductCardPrice"]')?.textContent?.trim() || '',
-          quantity: Number(e.querySelector('[data-test-id="ItemCardStepperValue"]')?.textContent?.trim() || 0)
+          quantity: Number(e.querySelector('[data-test-id="ItemCardStepperValue"]')?.textContent?.trim() || 0),
+          item_id: e.querySelector('a[data-test-id="CardLinkButton"]')?.href?.match(/itemid-([a-f0-9]{24})/)?.[1] || null
         })).filter(e=>e.title)
     }))()"""
-    return json.loads(browser("eval", script))
+    result = json.loads(browser("eval", script))
+    for item in result["items"]:
+        item["url"] = WOLT_URL_BASE + item["item_id"] if item.get("item_id") else None
+    return result
 
 
 def cart_counter() -> int | None:
